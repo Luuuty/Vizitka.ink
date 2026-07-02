@@ -1,0 +1,281 @@
+const body = document.body;
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelectorAll(".nav-links a");
+const cursorOrb = document.querySelector(".cursor-orb");
+const revealItems = document.querySelectorAll(".reveal");
+const tabButtons = document.querySelectorAll("[data-price-tab]");
+const priceSets = document.querySelectorAll("[data-price-set]");
+const leadForm = document.querySelector(".lead-form");
+const serviceSelect = leadForm?.querySelector('select[name="service"]');
+const contactInput = leadForm?.querySelector('input[name="contact"]');
+const projectMessage = leadForm?.querySelector('textarea[name="message"]');
+const contactLinks = document.querySelectorAll('.service-card a[href="#contact"], .price-card a[href="#contact"], .benefits-section a[href="#contact"]');
+const siteHeader = document.querySelector(".site-header");
+const hero = document.querySelector(".hero");
+
+// Navbar scroll effect
+if (siteHeader) {
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 50) {
+      siteHeader.classList.add("scrolled");
+    } else {
+      siteHeader.classList.remove("scrolled");
+    }
+  }, { passive: true });
+}
+
+if (navToggle) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = body.classList.toggle("menu-open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+}
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    body.classList.remove("menu-open");
+    navToggle?.setAttribute("aria-expanded", "false");
+  });
+});
+
+if (cursorOrb && window.matchMedia("(pointer: fine)").matches) {
+  window.addEventListener("pointermove", (event) => {
+    cursorOrb.style.transform = `translate(${event.clientX - 110}px, ${event.clientY - 110}px)`;
+  });
+} else if (cursorOrb) {
+  cursorOrb.remove();
+}
+
+if (hero && window.matchMedia("(pointer: fine)").matches) {
+  hero.addEventListener("pointermove", (event) => {
+    const rect = hero.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+    hero.style.setProperty("--hero-parallax-x", `${x * 18}px`);
+    hero.style.setProperty("--hero-parallax-y", `${y * 14}px`);
+  });
+
+  hero.addEventListener("pointerleave", () => {
+    hero.style.setProperty("--hero-parallax-x", "0px");
+    hero.style.setProperty("--hero-parallax-y", "0px");
+  });
+}
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.14 }
+);
+
+revealItems.forEach((item, index) => {
+  item.style.transitionDelay = `${Math.min(index % 3, 2) * 90}ms`;
+  revealObserver.observe(item);
+});
+
+tabButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const activeTab = button.dataset.priceTab;
+    const currentActive = document.querySelector(".price-set.active");
+    const targetSet = document.querySelector(`[data-price-set="${activeTab}"]`);
+
+    // Update button states
+    tabButtons.forEach((item) => item.classList.toggle("active", item === button));
+
+    // If clicking the same tab, do nothing
+    if (currentActive === targetSet) return;
+
+    // Fade out current set
+    if (currentActive) {
+      currentActive.classList.add("fade-out");
+      currentActive.classList.remove("active");
+
+      setTimeout(() => {
+        currentActive.classList.remove("fade-out");
+        currentActive.style.display = "none";
+
+        // Fade in new set
+        if (targetSet) {
+          targetSet.style.display = "grid";
+          // Force reflow
+          targetSet.offsetHeight;
+          targetSet.classList.add("active");
+        }
+      }, 400);
+    } else {
+      // First time, just show
+      if (targetSet) {
+        targetSet.style.display = "grid";
+        targetSet.offsetHeight;
+        targetSet.classList.add("active");
+      }
+    }
+  });
+});
+
+contactLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    const card = link.closest(".service-card, .price-card, .benefits-section");
+    const heading = card?.querySelector("h2, h3")?.textContent || "";
+    const service = detectService(heading);
+
+    if (serviceSelect && service) {
+      serviceSelect.value = service;
+    }
+
+    if (projectMessage && !projectMessage.value.trim() && heading) {
+      projectMessage.placeholder = `Интересует: ${heading}`;
+    }
+  });
+});
+
+function detectService(text) {
+  const normalized = text.toLowerCase();
+
+  if (normalized.includes("telegram")) return "Telegram-бот";
+  if (normalized.includes("vk") || normalized.includes("вк")) return "VK-бот";
+  if (normalized.includes("бот") || normalized.includes("автомат")) return "Комплексный проект";
+  if (normalized.includes("план")) return "Комплексный проект";
+
+  return "Сайт";
+}
+const faqItems = document.querySelectorAll(".faq-list details");
+
+faqItems.forEach((details) => {
+  const summary = details.querySelector("summary");
+  if (details.open) details.classList.add("is-open");
+
+  summary?.addEventListener("click", (event) => {
+    event.preventDefault();
+    toggleFaq(details);
+  });
+});
+
+function toggleFaq(target) {
+  if (target.dataset.animating === "true") return;
+
+  if (target.open) {
+    closeFaq(target);
+    return;
+  }
+
+  faqItems.forEach((item) => {
+    if (item !== target && item.open) closeFaq(item);
+  });
+
+  openFaq(target);
+}
+
+function openFaq(details) {
+  const summary = details.querySelector("summary");
+  if (!summary) return;
+
+  details.dataset.animating = "true";
+  details.open = true;
+  details.classList.add("is-open");
+
+  const startHeight = summary.offsetHeight;
+  const endHeight = details.scrollHeight;
+  details.style.height = `${startHeight}px`;
+
+  requestAnimationFrame(() => {
+    details.style.height = `${endHeight}px`;
+  });
+
+  finishFaqAnimation(details);
+}
+
+function closeFaq(details) {
+  const summary = details.querySelector("summary");
+  if (!summary) return;
+
+  details.dataset.animating = "true";
+  details.style.height = `${details.offsetHeight}px`;
+  details.classList.remove("is-open");
+
+  requestAnimationFrame(() => {
+    details.style.height = `${summary.offsetHeight}px`;
+  });
+
+  finishFaqAnimation(details, () => {
+    details.open = false;
+  });
+}
+
+function finishFaqAnimation(details, onFinish) {
+  const finish = (event) => {
+    if (event.propertyName !== "height") return;
+    details.style.height = "";
+    details.dataset.animating = "false";
+    onFinish?.();
+    details.removeEventListener("transitionend", finish);
+  };
+
+  details.addEventListener("transitionend", finish);
+}
+
+if (leadForm) {
+  leadForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!contactInput?.value.trim()) {
+      showToast("Оставьте телефон или Telegram, чтобы мы могли ответить.");
+      contactInput?.focus();
+      return;
+    }
+
+    const submitButton = leadForm.querySelector('button[type="submit"]');
+    const buttonText = submitButton?.innerHTML;
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.innerHTML = "Отправляем...";
+    }
+
+    try {
+      const response = await fetch(leadForm.action, {
+        method: "POST",
+        body: new FormData(leadForm),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) {
+        throw new Error("Formspree request failed");
+      }
+
+      showToast("Заявка отправлена. Скоро свяжемся с вами.");
+      leadForm.reset();
+    } catch (error) {
+      showToast("Не удалось отправить заявку. Напишите нам в Telegram или попробуйте ещё раз.");
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.innerHTML = buttonText;
+      }
+    }
+  });
+}
+
+function showToast(message) {
+  const oldToast = document.querySelector(".toast");
+  oldToast?.remove();
+
+  const toast = document.createElement("div");
+  toast.className = "toast";
+  toast.textContent = message;
+  body.append(toast);
+
+  requestAnimationFrame(() => toast.classList.add("show"));
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => toast.remove(), 260);
+  }, 5200);
+}
