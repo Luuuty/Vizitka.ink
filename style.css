@@ -3946,3 +3946,536 @@ li::before {
     min-height: auto;
   }
 }
+/* Full mobile adaptation pass */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+.btn,
+.portfolio-link,
+.contact-button,
+.pricing-tabs button,
+.nav-toggle {
+  min-height: 44px;
+}
+
+@media (max-width: 768px) {
+  body {
+    min-width: 0;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  .container,
+  .nav,
+  .narrow {
+    width: min(100% - 28px, 720px);
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .site-header {
+    background: rgba(5, 8, 18, 0.94);
+    backdrop-filter: blur(18px);
+  }
+
+  .nav {
+    min-height: 64px;
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .nav-toggle {
+    position: relative;
+    z-index: 1001;
+    flex: 0 0 44px;
+    border-radius: 14px;
+    transition: border-color 0.28s ease, background 0.28s ease, transform 0.28s ease;
+  }
+
+  .nav-toggle:hover {
+    transform: translateY(-1px);
+    border-color: rgba(0, 216, 255, 0.28);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .nav-toggle span {
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+  }
+
+  .menu-open .nav-toggle span:first-child {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-open .nav-toggle span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav-links {
+    inset: 64px 14px auto 14px;
+    gap: 4px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    background: rgba(6, 10, 22, 0.96);
+    box-shadow: 0 22px 70px rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(22px);
+    transform: translate3d(0, -14px, 0) scale(0.98);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.24s ease, visibility 0.24s ease;
+  }
+
+  .menu-open .nav-links {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    border-radius: 14px;
+    border-bottom: 0;
+    font-size: 15px;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.045);
+  }
+
+  .nav .btn-small {
+    display: inline-flex;
+    min-height: 44px;
+    padding: 0 14px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 82px 0 46px;
+  }
+
+  .hero::before,
+  .hero-grid-overlay {
+    opacity: 0.34;
+  }
+
+  .hero::after,
+  .hero-glass,
+  .hero-torus,
+  .laptop-orbit,
+  .glass-cube {
+    display: none;
+  }
+
+  .hero-grid {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    margin-bottom: 16px;
+    font-size: clamp(32px, 8.8vw, 44px);
+    line-height: 1.06;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+  }
+
+  .hero-content p {
+    max-width: 100%;
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.58;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .hero-actions .btn,
+  .hero .btn {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 14px;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .stats-row span {
+    width: 100%;
+    justify-content: center;
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 13px;
+  }
+
+  .hero-visual {
+    width: 100%;
+    min-height: 260px;
+    margin: 0 auto;
+    perspective: none;
+  }
+
+  .laptop-scene {
+    position: relative;
+    min-height: 260px;
+    animation: none;
+  }
+
+  .laptop-scene::before,
+  .laptop-scene::after {
+    opacity: 0.42;
+    filter: blur(18px);
+  }
+
+  .laptop {
+    width: min(100%, 430px);
+    transform: none !important;
+  }
+
+  .laptop::before {
+    inset: -18px -16px -34px;
+    opacity: 0.45;
+    filter: blur(18px);
+  }
+
+  .laptop-lid {
+    padding: 9px;
+    border-radius: 20px 20px 14px 14px;
+  }
+
+  .laptop-screen {
+    min-height: 204px;
+    border-radius: 13px;
+  }
+
+  .screen-topbar {
+    height: 34px;
+    padding: 0 10px;
+  }
+
+  .screen-url {
+    min-height: 21px;
+    font-size: 10px;
+  }
+
+  .screen-project {
+    min-height: 170px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .screen-copy h3 {
+    max-width: 260px;
+    font-size: 23px;
+    line-height: 1.05;
+  }
+
+  .screen-copy p {
+    max-width: 280px;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .screen-panel {
+    display: none;
+  }
+
+  .laptop-base {
+    height: 42px;
+  }
+
+  .laptop-keyboard {
+    height: 10px;
+  }
+
+  .tech-strip {
+    margin-top: 12px;
+  }
+
+  .marquee span {
+    min-height: 36px;
+    padding: 0 14px;
+  }
+
+  .benefits-grid,
+  .portfolio-grid,
+  .pricing-grid,
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .benefit-card,
+  .portfolio-card,
+  .price-card,
+  .contact-card,
+  .faq-list details {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .benefit-card,
+  .price-card,
+  .portfolio-card-body {
+    padding: 22px;
+  }
+
+  .portfolio-card {
+    border-radius: 22px;
+  }
+
+  .portfolio-preview {
+    margin: 10px 10px 0;
+    border-radius: 16px;
+  }
+
+  .portfolio-card p,
+  .price-card p,
+  .benefit-card p,
+  .faq-list p {
+    min-height: auto;
+    font-size: 16px;
+    line-height: 1.58;
+  }
+
+  .portfolio-tags span {
+    min-height: 30px;
+  }
+
+  .portfolio-link,
+  .price-card .btn,
+  .contact-button {
+    min-height: 48px;
+  }
+
+  .pricing-tabs {
+    width: 100%;
+    padding: 4px;
+  }
+
+  .pricing-tabs button {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 44px;
+    padding: 0 10px;
+    font-size: 13px;
+  }
+
+  .price-card {
+    min-height: auto;
+  }
+
+  .price-card.featured {
+    transform: none;
+    box-shadow: 0 18px 54px rgba(0, 0, 0, 0.3), 0 0 34px rgba(0, 216, 255, 0.08);
+  }
+
+  .price-card strong {
+    font-size: clamp(28px, 8vw, 34px);
+    overflow-wrap: anywhere;
+  }
+
+  .popular {
+    top: 12px;
+    right: 16px;
+    left: auto;
+    transform: none;
+    color: rgba(255, 255, 255, 0.38);
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .contact-actions {
+    gap: 10px;
+  }
+
+  .faq-list summary {
+    min-height: 58px;
+    padding: 18px 50px 18px 18px;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .reveal {
+    transition-duration: 0.45s;
+  }
+
+  .portfolio-bg,
+  .tech-strip .marquee-track,
+  .laptop-screen::after {
+    animation-duration: 28s;
+  }
+}
+
+@media (max-width: 430px) {
+  .container,
+  .nav,
+  .narrow {
+    width: calc(100% - 24px);
+  }
+
+  .section {
+    padding: 54px 0;
+  }
+
+  .nav {
+    min-height: 60px;
+  }
+
+  .nav-links {
+    inset: 62px 12px auto 12px;
+  }
+
+  .nav .btn-small {
+    max-width: 136px;
+    padding: 0 11px;
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 76px 0 40px;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 8.4vw, 36px);
+    line-height: 1.08;
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    min-height: 230px;
+  }
+
+  .laptop-scene {
+    min-height: 230px;
+  }
+
+  .laptop {
+    width: min(100%, 390px);
+  }
+
+  .laptop-screen {
+    min-height: 178px;
+  }
+
+  .screen-project {
+    min-height: 144px;
+    padding: 14px;
+  }
+
+  .screen-copy h3 {
+    font-size: 20px;
+  }
+
+  .screen-copy p {
+    font-size: 11px;
+  }
+
+  .screen-actions span {
+    min-height: 29px;
+    padding: 0 10px;
+    font-size: 10px;
+  }
+
+  .laptop-base {
+    height: 34px;
+  }
+
+  .benefit-card,
+  .price-card,
+  .portfolio-card-body,
+  .contact-card {
+    padding: 20px;
+  }
+
+  .portfolio-head h2,
+  .section-head h2,
+  .split-head h2,
+  .contact-info h2 {
+    font-size: clamp(25px, 7.2vw, 31px);
+  }
+}
+
+@media (max-width: 360px) {
+  .container,
+  .nav,
+  .narrow {
+    width: calc(100% - 20px);
+  }
+
+  .nav .btn-small {
+    max-width: 118px;
+    font-size: 10.5px;
+  }
+
+  .logo {
+    font-size: 15px;
+  }
+
+  .hero h1 {
+    font-size: 29px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .portfolio-card-body,
+  .benefit-card,
+  .price-card,
+  .contact-card {
+    padding: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: grid;
+  }
+
+  .floating-shape,
+  .floating-dot,
+  .cursor-orb {
+    display: none;
+  }
+}
