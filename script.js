@@ -6,10 +6,10 @@ const revealItems = document.querySelectorAll(".reveal");
 const tabButtons = document.querySelectorAll("[data-price-tab]");
 const priceSets = document.querySelectorAll("[data-price-set]");
 const leadForm = document.querySelector(".lead-form");
-const serviceSelect = leadForm?.querySelector('select[name="service"]');
+const taskTypeSelect = leadForm?.querySelector('select[name="taskType"]');
 const contactInput = leadForm?.querySelector('input[name="contact"]');
-const projectMessage = leadForm?.querySelector('textarea[name="message"]');
-const contactLinks = document.querySelectorAll('.service-card a[href="#contact"], .price-card a[href="#contact"], .benefits-section a[href="#contact"]');
+const projectMessage = leadForm?.querySelector('textarea[name="comment"]');
+const contactLinks = document.querySelectorAll('.service-card a[href="#contact"], .price-card a[href="#contact"], .benefits-section a[href="#contact"], .portfolio-link[href="#contact"]');
 const siteHeader = document.querySelector(".site-header");
 const hero = document.querySelector(".hero");
 
@@ -123,12 +123,12 @@ tabButtons.forEach((button) => {
 
 contactLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    const card = link.closest(".service-card, .price-card, .benefits-section");
+    const card = link.closest(".service-card, .price-card, .benefits-section, .portfolio-card");
     const heading = card?.querySelector("h2, h3")?.textContent || "";
     const service = detectService(heading);
 
-    if (serviceSelect && service) {
-      serviceSelect.value = service;
+    if (taskTypeSelect && service) {
+      taskTypeSelect.value = service;
     }
 
     if (projectMessage && !projectMessage.value.trim() && heading) {
@@ -140,10 +140,9 @@ contactLinks.forEach((link) => {
 function detectService(text) {
   const normalized = text.toLowerCase();
 
-  if (normalized.includes("telegram")) return "Telegram-бот";
-  if (normalized.includes("vk") || normalized.includes("вк")) return "VK-бот";
-  if (normalized.includes("бот") || normalized.includes("автомат")) return "Комплексный проект";
-  if (normalized.includes("план")) return "Комплексный проект";
+  if (normalized.includes("telegram") || normalized.includes("vk") || normalized.includes("бот")) return "Бот";
+  if (normalized.includes("комплекс") || normalized.includes("автомат")) return "Сайт + бот";
+  if (normalized.includes("план")) return "Сайт + бот";
 
   return "Сайт";
 }
@@ -226,14 +225,39 @@ if (leadForm) {
   leadForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    if (!contactInput?.value.trim()) {
-      showToast("Оставьте телефон или Telegram, чтобы мы могли ответить.");
+    const formData = new FormData(leadForm);
+    const payload = {
+      name: String(formData.get("name") || "").trim(),
+      contact: String(formData.get("contact") || "").trim(),
+      taskType: String(formData.get("taskType") || "").trim(),
+      budget: String(formData.get("budget") || "").trim(),
+      comment: String(formData.get("comment") || "").trim(),
+      source: "Vizitka landing",
+    };
+
+    const contactPattern = /^(\+?[0-9][0-9\s()\-]{6,}|@[A-Za-z0-9_]{5,32})$/;
+
+    if (payload.name.length < 2) {
+      showToast("Напишите имя, чтобы мы знали как к вам обратиться.");
+      leadForm.querySelector('input[name="name"]')?.focus();
+      return;
+    }
+
+    if (!contactPattern.test(payload.contact)) {
+      showToast("Оставьте телефон или Telegram username в формате @username.");
       contactInput?.focus();
+      return;
+    }
+
+    if (!payload.taskType) {
+      showToast("Выберите тип задачи: сайт, бот или оба направления.");
+      taskTypeSelect?.focus();
       return;
     }
 
     const submitButton = leadForm.querySelector('button[type="submit"]');
     const buttonText = submitButton?.innerHTML;
+    const endpoint = leadForm.dataset.endpoint || "/api/send-telegram";
 
     if (submitButton) {
       submitButton.disabled = true;
@@ -241,17 +265,20 @@ if (leadForm) {
     }
 
     try {
-      const response = await fetch(leadForm.action, {
+      const response = await fetch(endpoint, {
         method: "POST",
-        body: new FormData(leadForm),
-        headers: { Accept: "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
-        throw new Error("Formspree request failed");
+        throw new Error("Telegram webhook request failed");
       }
 
-      showToast("Заявка отправлена. Скоро свяжемся с вами.");
+      showToast("Заявка отправлена. Ответим в течение 15 минут.");
       leadForm.reset();
     } catch (error) {
       showToast("Не удалось отправить заявку. Напишите нам в Telegram или попробуйте ещё раз.");
@@ -263,7 +290,6 @@ if (leadForm) {
     }
   });
 }
-
 function showToast(message) {
   const oldToast = document.querySelector(".toast");
   oldToast?.remove();

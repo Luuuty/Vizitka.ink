@@ -4479,3 +4479,174 @@ canvas {
     display: none;
   }
 }
+.contact-direct-link {
+  width: fit-content;
+  min-height: 48px;
+  padding: 13px 18px;
+  margin-top: 18px;
+}
+
+@media (max-width: 768px) {
+  .contact-direct-link {
+    width: 100%;
+  }
+}
+/* Trust and Telegram form polish */
+:root {
+  --color-text-secondary: rgba(236, 242, 255, 0.76);
+  --color-text-muted: rgba(221, 232, 255, 0.62);
+  --muted: var(--color-text-secondary);
+}
+
+.section {
+  scroll-margin-top: 88px;
+}
+
+.benefits-section,
+.portfolio-section,
+#pricing,
+#faq,
+.contact-section {
+  padding-top: clamp(76px, 8vw, 118px);
+  padding-bottom: clamp(76px, 8vw, 118px);
+}
+
+.portfolio-status {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  color: rgba(236, 242, 255, 0.82);
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.portfolio-status-real {
+  border-color: rgba(0, 216, 255, 0.24);
+  color: #bff5ff;
+  background: rgba(0, 216, 255, 0.075);
+}
+
+.portfolio-card p,
+.benefit-card p,
+.price-card p,
+.faq-list p,
+.footer p,
+.contact-info p,
+.section-head p,
+.split-head p {
+  color: rgba(236, 242, 255, 0.76);
+}
+
+.contact-card {
+  align-items: stretch;
+}
+
+.lead-form {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 14px;
+}
+
+.lead-form label {
+  display: grid;
+  gap: 8px;
+  color: rgba(236, 242, 255, 0.74);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.lead-form input,
+.lead-form select,
+.lead-form textarea {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 15px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 15px;
+  outline: 0;
+  color: var(--text);
+  background: rgba(4, 7, 16, 0.66);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045);
+  transition: border-color 0.24s ease, box-shadow 0.24s ease, background 0.24s ease;
+}
+
+.lead-form textarea {
+  min-height: 104px;
+  padding-top: 14px;
+  resize: vertical;
+}
+
+.lead-form input:focus,
+.lead-form select:focus,
+.lead-form textarea:focus {
+  border-color: rgba(0, 216, 255, 0.42);
+  background: rgba(4, 7, 16, 0.82);
+  box-shadow: 0 0 0 4px rgba(0, 216, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.lead-form .btn {
+  width: 100%;
+  min-height: 52px;
+}
+
+.lead-form small {
+  color: rgba(221, 232, 255, 0.66);
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.contact-direct-link {
+  width: fit-content;
+  min-height: 48px;
+  padding: 13px 18px;
+  margin-top: 18px;
+}
+
+.btn-outline,
+.portfolio-link {
+  color: rgba(247, 249, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.price-card.featured .btn,
+.lead-form .btn,
+.hero .btn-gradient,
+.nav .btn-gradient {
+  background: linear-gradient(135deg, var(--cyan), var(--blue) 52%, var(--violet));
+}
+
+@media (max-width: 768px) {
+  .benefits-section,
+  .portfolio-section,
+  #pricing,
+  #faq,
+  .contact-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-direct-link {
+    width: 100%;
+  }
+
+  .lead-form input,
+  .lead-form select,
+  .lead-form textarea {
+    font-size: 16px;
+  }
+}
