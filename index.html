@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=trust-form-1">
+  <link rel="stylesheet" href="style.css?v=contact-old-1">
 </head>
 <body>
   <div class="noise"></div>
@@ -322,46 +322,28 @@
       </div>
     </section>
 
-            <section class="section contact-section" id="contact">
+                <section class="section contact-section" id="contact">
       <div class="container">
         <div class="contact-card reveal">
           <div class="contact-glow" aria-hidden="true"></div>
           <div class="contact-info">
             <span class="section-label">Контакты</span>
             <h2>Готовы запустить сайт, который продаёт?</h2>
-            <p>Оставьте заявку — обсудим проект, сроки и стоимость сегодня. Заявка уйдёт в Telegram команды.</p>
-            <div class="trust-line"><span></span>Ответим в течение 15 минут</div>
-            <a class="contact-button contact-button-whatsapp contact-direct-link" href="https://wa.me/message/GUNAF5TUTCVIM1" target="_blank" rel="noreferrer"><span>WA</span>Написать в WhatsApp</a>
+            <p>Оставьте заявку — обсудим проект, сроки и стоимость сегодня.</p>
           </div>
-          <form class="lead-form" data-telegram-form data-endpoint="/api/send-telegram" novalidate>
-            <label>
-              <span>Имя</span>
-              <input type="text" name="name" placeholder="Александр" autocomplete="name" required minlength="2">
-            </label>
-            <label>
-              <span>Контакт</span>
-              <input type="text" name="contact" placeholder="+996 555 123 456 или @username" autocomplete="tel" required>
-            </label>
-            <label>
-              <span>Тип задачи</span>
-              <select name="taskType" required>
-                <option value="" selected disabled>Выберите тип задачи</option>
-                <option value="Сайт">Сайт</option>
-                <option value="Бот">Бот</option>
-                <option value="Сайт + бот">Сайт + бот</option>
-              </select>
-            </label>
-            <label>
-              <span>Бюджет</span>
-              <input type="text" name="budget" placeholder="Например: $300–500" autocomplete="off">
-            </label>
-            <label>
-              <span>Комментарий</span>
-              <textarea name="comment" placeholder="Коротко о задаче"></textarea>
-            </label>
-            <button class="btn btn-gradient" type="submit">Отправить заявку <span>↗</span></button>
-            <small>Безопасно: токен Telegram не хранится на сайте. Отправка идёт через серверный endpoint.</small>
-          </form>
+          <div class="contact-cta-panel">
+            <div class="contact-actions">
+              <a class="contact-button contact-button-whatsapp" href="https://wa.me/message/GUNAF5TUTCVIM1" target="_blank" rel="noreferrer">
+                <span>WA</span>
+                Написать в WhatsApp
+              </a>
+              <a class="contact-button contact-button-telegram" href="https://t.me/bim_developer" target="_blank" rel="noreferrer">
+                <span>✈</span>
+                Написать в Telegram
+              </a>
+            </div>
+            <div class="trust-line"><span></span>Ответим в течение 15 минут</div>
+          </div>
         </div>
       </div>
     </section>
@@ -385,13 +367,14 @@
       <div>
         <h3>Соцсети</h3>
         <div class="socials">
-          <a href="https://t.me/bim_developer" target="_blank" rel="noreferrer">✈</a>
-          <a href="https://vk.ru/rafwonko" target="_blank" rel="noreferrer">VK</a>
+          <a href="https://wa.me/message/GUNAF5TUTCVIM1" target="_blank" rel="noreferrer" aria-label="WhatsApp">WA</a>
+          <a href="https://t.me/bim_developer" target="_blank" rel="noreferrer" aria-label="Telegram">✈</a>
+          <a href="https://vk.ru/rafwonko" target="_blank" rel="noreferrer" aria-label="VK">VK</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="script.js?v=hero-final-1"></script>
+  <script src="script.js?v=contact-old-1"></script>
 </body>
 </html>
