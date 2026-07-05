@@ -4715,11 +4715,11 @@ canvas {
 }
 
 .hero-trust {
-  max-width: 560px;
+  max-width: 575px;
   display: grid;
-  gap: 6px;
+  gap: 12px;
   margin: 0 0 22px;
-  padding: 15px 18px;
+  padding: 20px 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02));
@@ -4728,7 +4728,7 @@ canvas {
 
 .hero-trust strong {
   color: #f7f9ff;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 850;
 }
 
@@ -4736,28 +4736,36 @@ canvas {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 5px 7px;
+  gap: 0;
+  line-height: 1.35;
+}
+
+.hero-trust-text {
+  color: #f7f9ff;
 }
 
 .hero-trust-divider {
+  margin: 0 12px;
   color: rgba(236, 242, 255, 0.45);
+  font-size: 18px;
   font-weight: 700;
 }
 
 .hero-instagram-link {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 7px;
   color: #5fc4e8;
+  font-size: 16px;
   font-weight: 800;
   text-decoration: none;
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .hero-instagram-link svg {
-  width: 15px;
-  height: 15px;
-  flex: 0 0 15px;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.9;
@@ -4768,10 +4776,10 @@ canvas {
   opacity: 0.92;
 }
 
-.hero-trust span {
+.hero-trust > span {
   color: rgba(236, 242, 255, 0.72);
-  font-size: 13px;
-  line-height: 1.48;
+  font-size: 16px;
+  line-height: 1.58;
 }
 
 @media (max-width: 768px) {
