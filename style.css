@@ -4732,6 +4732,23 @@ canvas {
   font-weight: 850;
 }
 
+.hero-trust strong span {
+  color: rgba(236, 242, 255, 0.45);
+  font-weight: 700;
+}
+
+.hero-trust a {
+  color: rgba(0, 216, 255, 0.86);
+  font-weight: 800;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.hero-trust a:hover {
+  color: #f7f9ff;
+  opacity: 0.92;
+}
+
 .hero-trust span {
   color: rgba(236, 242, 255, 0.72);
   font-size: 13px;
