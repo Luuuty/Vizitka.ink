@@ -4720,3 +4720,76 @@ canvas {
     padding: 14px;
   }
 }
+
+/* Instagram section */
+.instagram-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.instagram-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: clamp(26px, 4vw, 46px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(0, 216, 255, 0.1), transparent 36%),
+    radial-gradient(circle at 90% 16%, rgba(139, 92, 246, 0.12), transparent 38%),
+    linear-gradient(180deg, rgba(18, 24, 42, 0.68), rgba(7, 10, 20, 0.82));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+}
+
+.instagram-card::before {
+  content: "";
+  position: absolute;
+  inset: auto -12% -60% 50%;
+  height: 240px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(0, 216, 255, 0.2), rgba(139, 92, 246, 0.14) 42%, transparent 72%);
+  filter: blur(22px);
+  pointer-events: none;
+}
+
+.instagram-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+}
+
+.instagram-copy h2 {
+  margin: 14px 0;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.instagram-copy p {
+  margin: 0;
+  color: rgba(236, 242, 255, 0.76);
+  font-size: var(--font-body-large);
+  line-height: 1.6;
+}
+
+.instagram-cta {
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .instagram-card {
+    display: grid;
+    gap: 22px;
+    padding: 24px;
+  }
+
+  .instagram-cta {
+    width: 100%;
+  }
+}
