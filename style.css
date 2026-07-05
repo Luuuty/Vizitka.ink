@@ -2596,6 +2596,25 @@ li::before {
   border-radius: 50%;
 }
 
+.socials a svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.socials .social-instagram {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.16);
+  background:
+    radial-gradient(circle at 28% 105%, #feda75 0 18%, transparent 38%),
+    radial-gradient(circle at 20% 80%, #fa7e1e 0 24%, transparent 45%),
+    radial-gradient(circle at 86% 12%, #515bd4 0 28%, transparent 50%),
+    linear-gradient(135deg, #833ab4, #fd1d1d 52%, #fcb045);
+  box-shadow: 0 12px 32px rgba(253, 29, 29, 0.18);
+}
+
 .floating-shape,
 .floating-dot {
   position: absolute;
