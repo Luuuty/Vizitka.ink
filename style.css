@@ -1620,6 +1620,22 @@ li::before {
   line-height: 1.6;
   font-weight: 500;
 }
+
+.why-summary {
+  grid-column: 1 / -1;
+  min-height: auto;
+  border-color: rgba(0, 216, 255, 0.18);
+  background:
+    radial-gradient(circle at 8% 20%, rgba(0, 216, 255, 0.08), transparent 36%),
+    linear-gradient(135deg, rgba(0, 216, 255, 0.06), rgba(139, 92, 246, 0.06));
+}
+
+.why-summary p {
+  color: rgba(247, 249, 255, 0.9);
+  font-size: 16px;
+  font-weight: 700;
+}
+
 .process-section {
   min-height: 680px;
   padding: 136px 0 134px;
