@@ -6205,3 +6205,139 @@ body {
     display: none;
   }
 }
+
+/* Hero reference size correction */
+@media (min-width: 1260px) {
+  .hero-style-header .nav {
+    width: min(1680px, calc(100% - 140px));
+    height: 136px;
+  }
+
+  .hero-reference {
+    min-height: 980px;
+    padding: 150px 0 28px;
+  }
+
+  .hero-reference .hero-grid {
+    width: min(1680px, calc(100% - 140px));
+    min-height: 640px;
+    grid-template-columns: minmax(520px, 0.42fr) minmax(860px, 0.58fr);
+    gap: clamp(34px, 3.5vw, 72px);
+  }
+
+  .hero-reference .hero-content {
+    padding-top: 108px;
+  }
+
+  .hero-reference h1 {
+    max-width: 660px;
+    font-size: clamp(58px, 4.55vw, 86px);
+    line-height: 1.12;
+  }
+
+  .hero-reference .hero-content p {
+    max-width: 560px;
+    font-size: 23px;
+  }
+
+  .hero-reference .hero-visual {
+    min-height: 660px;
+    transform: translateX(0);
+  }
+
+  .showcase-main {
+    width: clamp(580px, 34vw, 642px);
+    height: clamp(520px, 30.5vw, 575px);
+    right: clamp(180px, 12vw, 232px);
+    top: 10px;
+  }
+
+  .showcase-topbar {
+    height: 102px;
+  }
+
+  .showcase-screen {
+    left: 38px;
+    right: 38px;
+    top: 132px;
+    bottom: 22px;
+  }
+
+  .showcase-screen h2 {
+    margin: 78px 0 0 46px;
+    font-size: clamp(36px, 2.15vw, 42px);
+  }
+
+  .showcase-preview {
+    left: 38px;
+    right: 38px;
+    height: clamp(204px, 12vw, 230px);
+  }
+
+  .showcase-menu {
+    width: clamp(250px, 15.6vw, 300px);
+    height: clamp(345px, 22vw, 420px);
+    left: clamp(-18px, 0vw, 10px);
+    top: clamp(150px, 10vw, 190px);
+    padding: 30px;
+  }
+
+  .showcase-services {
+    width: clamp(248px, 14.8vw, 285px);
+    height: clamp(382px, 24vw, 460px);
+    right: clamp(-18px, -0.5vw, -4px);
+    top: clamp(178px, 11vw, 218px);
+    padding: 30px 24px;
+  }
+
+  .service-tiles article {
+    min-height: 150px;
+  }
+
+  .hero-metrics {
+    width: min(1108px, calc(100% - 250px));
+    min-height: 150px;
+    margin-top: -18px;
+    margin-left: calc((100% - min(1680px, calc(100% - 140px))) / 2 + 300px);
+  }
+}
+
+@media (min-width: 1700px) {
+  .hero-reference {
+    min-height: 1000px;
+  }
+
+  .hero-reference .hero-grid {
+    min-height: 660px;
+  }
+
+  .hero-reference h1 {
+    font-size: 82px;
+  }
+
+  .showcase-main {
+    width: 642px;
+    height: 575px;
+    right: 238px;
+    top: 8px;
+  }
+
+  .showcase-menu {
+    width: 300px;
+    height: 420px;
+    left: -18px;
+    top: 182px;
+  }
+
+  .showcase-services {
+    width: 285px;
+    height: 460px;
+    right: -18px;
+    top: 212px;
+  }
+
+  .hero-metrics {
+    width: 1108px;
+    margin-left: calc((100% - min(1680px, calc(100% - 140px))) / 2 + 290px);
+  }
+}
