@@ -9828,3 +9828,78 @@ body {
     height: 26px !important;
   }
 }
+
+/* Compact "Зачем сайт" section */
+#why-website {
+  padding-top: clamp(56px, 6vw, 76px) !important;
+  padding-bottom: clamp(52px, 6vw, 72px) !important;
+}
+
+#why-website .split-head {
+  margin-bottom: 28px !important;
+}
+
+#why-website .split-head > div {
+  max-width: 760px !important;
+}
+
+#why-website .split-head h2 {
+  margin-bottom: 14px !important;
+}
+
+#why-website .split-head p {
+  max-width: 640px !important;
+  font-size: 16px !important;
+  line-height: 1.55 !important;
+}
+
+#why-website .benefits-grid {
+  gap: 14px !important;
+}
+
+#why-website .benefit-card {
+  min-height: 188px !important;
+  padding: 22px 20px !important;
+}
+
+#why-website .benefit-card span {
+  width: 36px !important;
+  height: 36px !important;
+  margin-bottom: 18px !important;
+  font-size: 12px !important;
+}
+
+#why-website .benefit-card h3 {
+  margin-bottom: 10px !important;
+  font-size: clamp(18px, 1.45vw, 22px) !important;
+}
+
+#why-website .benefit-card p {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+#why-website .why-summary {
+  padding: 18px 22px !important;
+}
+
+#why-website .why-summary p {
+  font-size: 15px !important;
+  line-height: 1.45 !important;
+}
+
+@media (max-width: 768px) {
+  #why-website {
+    padding-top: 44px !important;
+    padding-bottom: 48px !important;
+  }
+
+  #why-website .split-head {
+    margin-bottom: 22px !important;
+  }
+
+  #why-website .benefit-card {
+    min-height: auto !important;
+    padding: 18px !important;
+  }
+}
