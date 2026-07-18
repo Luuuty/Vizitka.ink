@@ -9355,3 +9355,65 @@ body {
     height: 30px !important;
   }
 }
+
+/* Contact CTA clean inner image contour */
+.contact-cinematic-card {
+  background: #080807 !important;
+  overflow: hidden !important;
+}
+
+.contact-cinematic-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 10px !important;
+  z-index: 0 !important;
+  border-radius: 44px !important;
+  pointer-events: none !important;
+  background: url("img/contact-bg.png") center / cover no-repeat !important;
+  opacity: 1 !important;
+}
+
+.contact-cinematic-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 10px !important;
+  z-index: 1 !important;
+  border-radius: 44px !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.1) 42%, rgba(0, 0, 0, 0.5) 100%),
+    radial-gradient(ellipse 38% 44% at 77% 47%, rgba(0, 0, 0, 0.25), transparent 72%) !important;
+}
+
+.contact-cinematic-card > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+@media (max-width: 1024px) {
+  .contact-cinematic-card::before {
+    inset: 8px !important;
+    border-radius: 30px !important;
+    background-position: 36% center !important;
+  }
+
+  .contact-cinematic-card::after {
+    inset: 8px !important;
+    border-radius: 30px !important;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.28) 44%, rgba(0, 0, 0, 0.62) 100%) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-cinematic-card::before {
+    inset: 6px !important;
+    border-radius: 22px !important;
+    background: url("img/contact-bg.png") 31% top / auto 58% no-repeat, linear-gradient(180deg, #11100f, #080807) !important;
+  }
+
+  .contact-cinematic-card::after {
+    inset: 6px !important;
+    border-radius: 22px !important;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.18) 36%, rgba(0, 0, 0, 0.74) 100%) !important;
+  }
+}
