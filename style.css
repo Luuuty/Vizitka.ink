@@ -9417,3 +9417,91 @@ body {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.18) 36%, rgba(0, 0, 0, 0.74) 100%) !important;
   }
 }
+
+/* Site-wide warm mood lighting */
+.benefits-section,
+.portfolio-section,
+#pricing,
+#faq,
+.contact-section,
+.moodboard-section,
+.footer {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.benefits-section > .container,
+.portfolio-section > .container,
+#pricing > .container,
+#faq > .container,
+.contact-section > .container,
+.moodboard-section > .container,
+.footer > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.atmo-light-beams,
+.atmo-leaf-shadows {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.atmo-light-beams {
+  opacity: 0.3;
+  mix-blend-mode: screen;
+  background:
+    linear-gradient(112deg, transparent 0 14%, rgba(246, 187, 119, 0.16) 22%, transparent 34%),
+    linear-gradient(114deg, transparent 0 42%, rgba(255, 226, 174, 0.11) 50%, transparent 61%),
+    linear-gradient(112deg, transparent 0 68%, rgba(190, 116, 62, 0.12) 76%, transparent 88%);
+  filter: blur(0.5px);
+  transform: translate3d(-2%, -1%, 0) rotate(-1deg);
+  animation: beamDrift 16s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
+}
+
+.atmo-light-beams::before {
+  content: "";
+  position: absolute;
+  inset: -16% -10%;
+  background:
+    radial-gradient(ellipse 46% 30% at 18% 8%, rgba(255, 207, 150, 0.2), transparent 68%),
+    radial-gradient(ellipse 35% 24% at 86% 28%, rgba(224, 146, 82, 0.14), transparent 72%);
+  filter: blur(24px);
+}
+
+.atmo-leaf-shadows {
+  opacity: 0.24;
+  mix-blend-mode: multiply;
+  background:
+    radial-gradient(ellipse 18% 11% at 2% 12%, rgba(0, 0, 0, 0.72), transparent 70%),
+    radial-gradient(ellipse 12% 22% at 8% 26%, rgba(0, 0, 0, 0.6), transparent 72%),
+    radial-gradient(ellipse 16% 10% at 4% 43%, rgba(0, 0, 0, 0.5), transparent 72%),
+    radial-gradient(ellipse 20% 14% at 96% 22%, rgba(0, 0, 0, 0.32), transparent 74%);
+  filter: blur(14px);
+  transform: translate3d(-1%, 0, 0) rotate(-5deg);
+  animation: leafSway 19s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
+}
+
+@keyframes beamDrift {
+  from {
+    transform: translate3d(-2%, -1%, 0) rotate(-1deg);
+  }
+
+  to {
+    transform: translate3d(2%, 1%, 0) rotate(1.5deg);
+  }
+}
+
+@keyframes leafSway {
+  from {
+    transform: translate3d(-1.2%, 0, 0) rotate(-5deg) scale(1);
+  }
+
+  to {
+    transform: translate3d(1.2%, 0.8%, 0) rotate(-3deg) scale(1.03);
+  }
+}
