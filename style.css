@@ -9604,3 +9604,103 @@ body {
     animation: none !important;
   }
 }
+
+/* Warm override: remove old blue mood and match hero lighting */
+:root {
+  --color-border-hover: rgba(224, 176, 120, 0.3);
+  --color-accent-primary: #e0b078;
+  --color-accent-secondary: #b9784f;
+  --color-accent-tertiary: #f1d2a5;
+  --shadow-glow-sm: 0 0 20px rgba(224, 176, 120, 0.08);
+  --shadow-glow-md: 0 0 40px rgba(224, 176, 120, 0.12);
+  --shadow-glow-lg: 0 0 60px rgba(224, 176, 120, 0.16);
+  --cyan: #e0b078;
+  --blue: #f1d2a5;
+  --violet: #b9784f;
+  --shadow: rgba(224, 176, 120, 0.16);
+}
+
+body {
+  background:
+    radial-gradient(ellipse 48% 34% at 74% 0%, rgba(177, 136, 107, 0.12), transparent 68%),
+    radial-gradient(ellipse 34% 24% at 16% 8%, rgba(255, 236, 207, 0.045), transparent 64%),
+    linear-gradient(180deg, #060606 0%, #0b0a09 44%, #050505 100%) !important;
+}
+
+.noise {
+  background:
+    linear-gradient(180deg, rgba(255, 236, 207, 0.018), transparent 28%, rgba(210, 139, 76, 0.012) 100%),
+    radial-gradient(circle at 12% 18%, rgba(255, 213, 156, 0.035), transparent 22%),
+    radial-gradient(circle at 88% 72%, rgba(177, 111, 58, 0.03), transparent 24%) !important;
+}
+
+.cursor-orb {
+  background: radial-gradient(circle, rgba(224, 176, 120, 0.08), transparent 68%) !important;
+}
+
+.portfolio-bg,
+.why-bg,
+.contact-glow,
+.footer-border-glow {
+  background:
+    radial-gradient(ellipse 48% 34% at 20% 18%, rgba(224, 176, 120, 0.08), transparent 66%),
+    radial-gradient(ellipse 42% 30% at 82% 30%, rgba(185, 120, 79, 0.07), transparent 70%) !important;
+  filter: blur(8px) !important;
+}
+
+.footer-border-glow {
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, rgba(224, 176, 120, 0.32), rgba(185, 120, 79, 0.24), transparent) !important;
+}
+
+.section-label::before,
+.floating-dot,
+.trust-line span {
+  background: #e0b078 !important;
+  box-shadow: 0 0 16px rgba(224, 176, 120, 0.55) !important;
+}
+
+.portfolio-divider::after,
+.why-divider::after,
+.process-line::before {
+  background: linear-gradient(90deg, transparent, rgba(224, 176, 120, 0.78), rgba(185, 120, 79, 0.62), transparent) !important;
+  box-shadow: 0 0 20px rgba(224, 176, 120, 0.22) !important;
+}
+
+.benefit-card,
+.portfolio-card,
+.price-card,
+.faq-list details,
+.contact-card {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(224, 176, 120, 0.045), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018)) !important;
+  border-color: rgba(224, 176, 120, 0.13) !important;
+}
+
+.benefit-card:hover,
+.portfolio-card:hover,
+.price-card:hover,
+.faq-list details[open] {
+  border-color: rgba(224, 176, 120, 0.28) !important;
+  box-shadow:
+    0 28px 90px rgba(0, 0, 0, 0.32),
+    0 0 44px rgba(224, 176, 120, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
+}
+
+.btn-gradient,
+.project-cta,
+.portfolio-link,
+.lead-form button {
+  background: linear-gradient(135deg, #f1d2a5, #e0b078 52%, #b9784f) !important;
+  box-shadow: 0 16px 38px rgba(224, 176, 120, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+}
+
+.pricing-tabs button.active,
+.faq-list details[open] summary::after,
+.portfolio-status {
+  border-color: rgba(224, 176, 120, 0.28) !important;
+  color: #f1d2a5 !important;
+  background: rgba(224, 176, 120, 0.075) !important;
+}
