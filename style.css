@@ -9486,6 +9486,71 @@ body {
   animation: leafSway 19s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
 }
 
+#benefits .atmo-light-beams {
+  opacity: 0.27;
+  transform: translate3d(1%, -1%, 0) rotate(2deg);
+}
+
+#benefits .atmo-leaf-shadows {
+  opacity: 0.22;
+  background-position: 3% 4%, 8% 24%, 5% 50%, 92% 18%;
+}
+
+.portfolio-section .atmo-light-beams {
+  opacity: 0.24;
+  transform: translate3d(-3%, 0, 0) rotate(-4deg);
+}
+
+.portfolio-section .atmo-leaf-shadows {
+  opacity: 0.2;
+  filter: blur(16px);
+}
+
+#pricing .atmo-light-beams {
+  opacity: 0.32;
+  transform: translate3d(2%, 1%, 0) rotate(3deg);
+}
+
+#pricing .atmo-leaf-shadows {
+  opacity: 0.23;
+  transform: translate3d(1%, 0, 0) rotate(4deg);
+}
+
+#faq .atmo-light-beams {
+  opacity: 0.25;
+  transform: translate3d(-1%, 0, 0) rotate(-6deg);
+}
+
+#faq .atmo-leaf-shadows {
+  opacity: 0.19;
+}
+
+.contact-section > .atmo-light-beams {
+  opacity: 0.18;
+}
+
+.contact-section > .atmo-leaf-shadows {
+  opacity: 0.16;
+}
+
+.moodboard-section .atmo-light-beams {
+  opacity: 0.22;
+  transform: translate3d(0, -1%, 0) rotate(5deg);
+}
+
+.moodboard-section .atmo-leaf-shadows {
+  opacity: 0.18;
+}
+
+.footer .atmo-light-beams {
+  opacity: 0.2;
+  transform: translate3d(2%, 0, 0) rotate(-3deg);
+}
+
+.footer .atmo-leaf-shadows {
+  opacity: 0.17;
+}
+
 @keyframes beamDrift {
   from {
     transform: translate3d(-2%, -1%, 0) rotate(-1deg);
