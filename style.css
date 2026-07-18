@@ -7625,3 +7625,818 @@ body {
     margin-top: -12px !important;
   }
 }
+
+/* Hero photo-exact final scene */
+.hero-style-header {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.hero-style-header .nav {
+  width: min(1480px, calc(100% - 136px)) !important;
+  min-height: 104px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.hero-style-header .logo {
+  color: #f7f1eb !important;
+  letter-spacing: -0.055em !important;
+  text-transform: uppercase !important;
+}
+
+.hero-style-header .logo span:last-child span {
+  color: inherit !important;
+}
+
+.hero-style-header .logo-mark {
+  width: 40px !important;
+  height: 40px !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #f7f1eb !important;
+  box-shadow: none !important;
+  font-weight: 900 !important;
+  transform: skewX(-14deg);
+}
+
+.hero-style-header .nav-links {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  gap: 78px !important;
+}
+
+.hero-style-header .nav-links a {
+  color: rgba(247, 241, 235, 0.76) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+.hero-style-header .btn-small {
+  min-height: 58px !important;
+  min-width: 150px !important;
+  padding: 0 30px !important;
+  margin-left: auto !important;
+  margin-right: 28px !important;
+  border-radius: 999px !important;
+  color: #101010 !important;
+  background: linear-gradient(180deg, #fff8f1 0%, #eee2d8 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.85) !important;
+}
+
+.hero-style-header .hero-nav-arrow {
+  width: 54px !important;
+  height: 54px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+  color: #f7f1eb !important;
+  border: 1px solid rgba(247, 241, 235, 0.16) !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+  font-size: 24px !important;
+}
+
+.hero-photo-exact {
+  position: relative !important;
+  min-height: 900px !important;
+  padding: 128px 0 30px !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  background:
+    radial-gradient(ellipse 56% 44% at 72% 2%, rgba(164, 124, 96, 0.18), transparent 67%),
+    radial-gradient(ellipse 36% 25% at 78% 78%, rgba(160, 99, 48, 0.12), transparent 70%),
+    radial-gradient(ellipse 28% 20% at 13% 19%, rgba(255, 255, 255, 0.045), transparent 62%),
+    linear-gradient(112deg, #060606 0%, #121111 47%, #050505 100%) !important;
+}
+
+.hero-photo-exact::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px) !important;
+  background-size: 120px 120px !important;
+  mask-image: radial-gradient(circle at 62% 36%, black 0%, transparent 68%) !important;
+  opacity: 0.14 !important;
+}
+
+.hero-photo-exact::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 6% !important;
+  right: 5% !important;
+  bottom: 3% !important;
+  height: 170px !important;
+  pointer-events: none !important;
+  background: radial-gradient(ellipse at 72% 60%, rgba(189, 121, 71, 0.13), transparent 60%) !important;
+  filter: blur(14px) !important;
+  z-index: -1 !important;
+}
+
+.hero-photo-exact .hero-reference-light {
+  position: absolute !important;
+  inset: -20% -10% auto auto !important;
+  width: 58vw !important;
+  height: 58vw !important;
+  background: radial-gradient(circle, rgba(255, 236, 216, 0.16), rgba(137, 96, 73, 0.08) 34%, transparent 68%) !important;
+  filter: blur(34px) !important;
+  opacity: 0.85 !important;
+  pointer-events: none !important;
+}
+
+.hero-photo-exact .hero-grid {
+  width: min(1480px, calc(100% - 136px)) !important;
+  margin: 0 auto !important;
+  min-height: 650px !important;
+  display: grid !important;
+  grid-template-columns: minmax(470px, 0.38fr) minmax(780px, 0.62fr) !important;
+  gap: 48px !important;
+  align-items: center !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.hero-photo-exact .hero-content {
+  max-width: 590px !important;
+  padding-top: 72px !important;
+}
+
+.hero-photo-exact .hero-eyebrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 36px !important;
+  padding: 0 18px !important;
+  margin: 0 0 28px !important;
+  border-radius: 999px !important;
+  color: rgba(247, 241, 235, 0.9) !important;
+  background: rgba(255, 255, 255, 0.045) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+
+.hero-photo-exact h1 {
+  max-width: 610px !important;
+  margin: 0 0 28px !important;
+  color: #f4eee8 !important;
+  font-size: clamp(60px, 4.45vw, 78px) !important;
+  line-height: 1.1 !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.052em !important;
+  text-wrap: balance !important;
+}
+
+.hero-photo-exact h1 span {
+  display: inline-block !important;
+  color: #ddb794 !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.065em !important;
+}
+
+.hero-photo-exact .hero-content p {
+  max-width: 550px !important;
+  margin: 0 0 60px !important;
+  color: rgba(247, 241, 235, 0.62) !important;
+  font-size: 22px !important;
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+}
+
+.hero-photo-exact .hero-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 30px !important;
+  flex-wrap: nowrap !important;
+}
+
+.hero-photo-exact .hero-actions .btn {
+  min-height: 74px !important;
+  border-radius: 999px !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.65s cubic-bezier(0.22, 1, 0.36, 1), background 0.65s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.hero-photo-exact .hero-actions .btn-gradient {
+  min-width: 266px !important;
+  padding: 0 34px !important;
+  color: #101010 !important;
+  background: linear-gradient(180deg, #fff8f1 0%, #eee2d8 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.72) !important;
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.86) !important;
+}
+
+.hero-photo-exact .hero-actions .btn-outline {
+  min-width: 224px !important;
+  padding: 0 !important;
+  color: #f4eee8 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.hero-photo-exact .hero-actions .btn:hover {
+  transform: translateY(-3px) !important;
+}
+
+.hero-photo-exact .hero-visual {
+  min-height: 650px !important;
+  overflow: visible !important;
+  perspective: 1500px !important;
+}
+
+.hero-photo-exact .hero-browser-composition {
+  position: relative !important;
+  width: 100% !important;
+  height: 650px !important;
+  overflow: visible !important;
+  transform-style: preserve-3d !important;
+  animation: heroPhotoFloat 8s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate !important;
+}
+
+.hero-photo-exact .browser-panel {
+  position: absolute !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: linear-gradient(145deg, rgba(45, 39, 35, 0.46), rgba(9, 9, 10, 0.72)) !important;
+  backdrop-filter: blur(18px) saturate(120%) !important;
+  box-shadow: 0 42px 110px rgba(0, 0, 0, 0.56), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+.hero-photo-exact .browser-panel-main {
+  width: 640px !important;
+  height: 575px !important;
+  right: 210px !important;
+  top: 5px !important;
+  border-radius: 18px !important;
+  transform: rotateZ(-5deg) rotateY(-7deg) rotateX(2deg) !important;
+  overflow: hidden !important;
+  z-index: 3 !important;
+}
+
+.hero-photo-exact .browser-panel-left {
+  width: 300px !important;
+  height: 420px !important;
+  left: 6px !important;
+  top: 174px !important;
+  border-radius: 18px !important;
+  opacity: 0.52 !important;
+  transform: rotateZ(14deg) rotateY(20deg) translateZ(-90px) !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+  padding: 34px 30px !important;
+}
+
+.hero-photo-exact .browser-panel-right {
+  width: 285px !important;
+  height: 460px !important;
+  right: 0 !important;
+  top: 196px !important;
+  border-radius: 18px !important;
+  opacity: 0.76 !important;
+  transform: rotateZ(-2deg) translateZ(80px) !important;
+  overflow: hidden !important;
+  z-index: 2 !important;
+  padding: 28px 24px !important;
+}
+
+.hero-photo-exact .browser-topbar {
+  height: 92px !important;
+  padding: 0 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  color: rgba(247, 241, 235, 0.7) !important;
+}
+
+.hero-photo-exact .browser-mini-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  color: #f7f1eb !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.hero-photo-exact .browser-mini-brand span {
+  display: inline-grid !important;
+  place-items: center !important;
+  width: 20px !important;
+  height: 20px !important;
+  color: #f7f1eb !important;
+  transform: skewX(-14deg) !important;
+}
+
+.hero-photo-exact .browser-topbar nav {
+  display: flex !important;
+  gap: 22px !important;
+  font-size: 8px !important;
+  color: rgba(247, 241, 235, 0.58) !important;
+}
+
+.hero-photo-exact .browser-topbar button {
+  min-height: 26px !important;
+  padding: 0 14px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  color: #191716 !important;
+  background: linear-gradient(180deg, #fff7ee, #e6d4c4) !important;
+  font-size: 8px !important;
+  font-weight: 700 !important;
+}
+
+.hero-photo-exact .browser-content {
+  position: absolute !important;
+  left: 34px !important;
+  right: 34px !important;
+  top: 118px !important;
+  bottom: 22px !important;
+  display: block !important;
+  padding: 0 !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(ellipse at 78% 100%, rgba(198, 125, 72, 0.11), transparent 56%),
+    linear-gradient(145deg, rgba(7, 7, 7, 0.96), rgba(18, 17, 16, 0.95)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.065) !important;
+}
+
+.hero-photo-exact .browser-content h2 {
+  max-width: 368px !important;
+  margin: 76px 0 0 42px !important;
+  color: #f6eee6 !important;
+  font-size: 36px !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.055em !important;
+  font-weight: 500 !important;
+}
+
+.hero-photo-exact .browser-content em {
+  color: #d9ae8a !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+}
+
+.hero-photo-exact .browser-preview-card {
+  position: absolute !important;
+  left: 34px !important;
+  right: 34px !important;
+  bottom: -18px !important;
+  height: 205px !important;
+  min-height: 0 !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  padding: 24px !important;
+  background:
+    linear-gradient(180deg, rgba(255, 240, 218, 0.72), rgba(190, 128, 71, 0.18)),
+    radial-gradient(circle at 82% 34%, rgba(113, 73, 38, 0.48) 0 1px, transparent 2px),
+    linear-gradient(140deg, #f2d9b5 0%, #d0a06d 47%, #4c321f 100%) !important;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.42) !important;
+}
+
+.hero-photo-exact .browser-preview-card::before,
+.hero-photo-exact .browser-preview-card::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -28px !important;
+  width: 170px !important;
+  height: 170px !important;
+  border: 2px solid rgba(65, 39, 20, 0.25) !important;
+  border-radius: 50% 50% 8px 8px !important;
+  transform: rotate(20deg) !important;
+}
+
+.hero-photo-exact .browser-preview-card::before {
+  right: 70px !important;
+}
+
+.hero-photo-exact .browser-preview-card::after {
+  right: -28px !important;
+  transform: rotate(-12deg) !important;
+}
+
+.hero-photo-exact .browser-preview-card span {
+  position: relative !important;
+  z-index: 2 !important;
+  display: inline-block !important;
+  color: rgba(53, 35, 23, 0.82) !important;
+  font-size: 14px !important;
+  line-height: 1.32 !important;
+  font-weight: 600 !important;
+}
+
+.hero-photo-exact .browser-preview-card i {
+  position: absolute !important;
+  bottom: 0 !important;
+  width: 4px !important;
+  background: rgba(48, 31, 19, 0.55) !important;
+  transform-origin: bottom !important;
+}
+
+.hero-photo-exact .browser-preview-card i:nth-of-type(1) {
+  height: 132px !important;
+  right: 134px !important;
+  transform: rotate(13deg) !important;
+}
+
+.hero-photo-exact .browser-preview-card i:nth-of-type(2) {
+  height: 150px !important;
+  right: 98px !important;
+  transform: rotate(-8deg) !important;
+}
+
+.hero-photo-exact .browser-preview-card i:nth-of-type(3) {
+  height: 118px !important;
+  right: 64px !important;
+  transform: rotate(6deg) !important;
+}
+
+.hero-photo-exact .browser-panel-left p {
+  margin: 38px 0 18px !important;
+  color: rgba(247, 241, 235, 0.35) !important;
+  font-size: 12px !important;
+}
+
+.hero-photo-exact .browser-panel-left h3 {
+  margin: 0 0 18px !important;
+  color: rgba(247, 241, 235, 0.72) !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+}
+
+.hero-photo-exact .browser-panel-left ul {
+  display: grid !important;
+  gap: 15px !important;
+  margin: 0 0 28px !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.hero-photo-exact .browser-panel-left li {
+  color: rgba(247, 241, 235, 0.34) !important;
+  font-size: 11px !important;
+}
+
+.hero-photo-exact .browser-panel-left a {
+  display: inline-flex !important;
+  min-height: 30px !important;
+  align-items: center !important;
+  padding: 0 16px !important;
+  border-radius: 999px !important;
+  color: rgba(21, 17, 14, 0.88) !important;
+  background: rgba(245, 235, 224, 0.74) !important;
+  font-size: 10px !important;
+}
+
+.hero-photo-exact .browser-panel-right h3 {
+  margin: 0 0 34px !important;
+  color: rgba(247, 241, 235, 0.82) !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-style: italic !important;
+  font-size: 19px !important;
+  font-weight: 400 !important;
+}
+
+.hero-photo-exact .service-tile-pair {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  margin-bottom: 32px !important;
+}
+
+.hero-photo-exact .service-tile-pair article,
+.hero-photo-exact .browser-panel-right > div:not(.service-tile-pair) {
+  border-radius: 14px !important;
+  background: rgba(255, 255, 255, 0.045) !important;
+  border: 1px solid rgba(255, 255, 255, 0.045) !important;
+}
+
+.hero-photo-exact .service-tile-pair article {
+  min-height: 132px !important;
+  padding: 16px 12px !important;
+}
+
+.hero-photo-exact .browser-panel-right > div:not(.service-tile-pair) {
+  display: grid !important;
+  grid-template-columns: 42px 1fr !important;
+  gap: 16px !important;
+  align-items: center !important;
+  margin-top: 18px !important;
+  padding: 12px 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.hero-photo-exact .browser-panel-right strong {
+  display: grid !important;
+  place-items: center !important;
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 12px !important;
+  color: #e8c3a6 !important;
+  background: linear-gradient(145deg, rgba(167, 111, 72, 0.46), rgba(255, 255, 255, 0.055)) !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+}
+
+.hero-photo-exact .browser-panel-right span {
+  display: block !important;
+  color: rgba(247, 241, 235, 0.74) !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  font-weight: 500 !important;
+}
+
+.hero-photo-exact .hero-metrics {
+  width: min(1010px, calc(100% - 320px)) !important;
+  min-height: 145px !important;
+  margin: -16px auto 0 !important;
+  padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  align-items: center !important;
+  position: relative !important;
+  z-index: 3 !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.11) !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(5, 5, 6, 0.48)) !important;
+  backdrop-filter: blur(18px) !important;
+  box-shadow: 0 28px 88px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+}
+
+.hero-photo-exact .hero-metrics div {
+  min-height: 92px !important;
+  display: grid !important;
+  place-items: center !important;
+  gap: 8px !important;
+  text-align: center !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.075) !important;
+}
+
+.hero-photo-exact .hero-metrics div:last-child {
+  border-right: 0 !important;
+}
+
+.hero-photo-exact .hero-metrics strong {
+  color: #f6eee8 !important;
+  font-size: 30px !important;
+  line-height: 1 !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.045em !important;
+}
+
+.hero-photo-exact .hero-metrics span {
+  color: rgba(247, 241, 235, 0.48) !important;
+  font-size: 13px !important;
+  line-height: 1.35 !important;
+}
+
+@keyframes heroPhotoFloat {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@media (max-width: 1180px) {
+  .hero-style-header .nav,
+  .hero-photo-exact .hero-grid {
+    width: min(100% - 64px, 1480px) !important;
+  }
+
+  .hero-style-header .nav-links {
+    gap: 34px !important;
+  }
+
+  .hero-photo-exact .hero-grid {
+    grid-template-columns: minmax(360px, 0.42fr) minmax(560px, 0.58fr) !important;
+  }
+
+  .hero-photo-exact h1 {
+    font-size: 52px !important;
+  }
+
+  .hero-photo-exact .hero-content p {
+    font-size: 18px !important;
+  }
+
+  .hero-photo-exact .browser-panel-main {
+    width: 540px !important;
+    height: 485px !important;
+    right: 130px !important;
+  }
+
+  .hero-photo-exact .browser-panel-left {
+    width: 250px !important;
+    left: -2px !important;
+  }
+
+  .hero-photo-exact .browser-panel-right {
+    width: 230px !important;
+  }
+
+  .hero-photo-exact .hero-metrics {
+    width: min(860px, calc(100% - 96px)) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-style-header .nav {
+    width: calc(100% - 40px) !important;
+    min-height: 82px !important;
+  }
+
+  .hero-style-header .nav-links,
+  .hero-style-header .hero-nav-arrow {
+    display: none !important;
+  }
+
+  .hero-photo-exact {
+    min-height: auto !important;
+    padding: 96px 0 42px !important;
+  }
+
+  .hero-photo-exact .hero-grid {
+    width: calc(100% - 40px) !important;
+    grid-template-columns: 1fr !important;
+    min-height: 0 !important;
+    gap: 42px !important;
+  }
+
+  .hero-photo-exact .hero-content {
+    max-width: none !important;
+    padding-top: 0 !important;
+  }
+
+  .hero-photo-exact h1 {
+    font-size: clamp(42px, 12vw, 56px) !important;
+  }
+
+  .hero-photo-exact .hero-content p {
+    margin-bottom: 34px !important;
+    font-size: 17px !important;
+  }
+
+  .hero-photo-exact .hero-actions {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .hero-photo-exact .hero-actions .btn {
+    width: 100% !important;
+    min-height: 58px !important;
+  }
+
+  .hero-photo-exact .hero-visual {
+    min-height: 380px !important;
+  }
+
+  .hero-photo-exact .hero-browser-composition {
+    height: 380px !important;
+    transform: translateX(4%) !important;
+  }
+
+  .hero-photo-exact .browser-panel-left,
+  .hero-photo-exact .browser-panel-right {
+    display: none !important;
+  }
+
+  .hero-photo-exact .browser-panel-main {
+    width: 108% !important;
+    height: auto !important;
+    aspect-ratio: 1.12 / 1 !important;
+    left: 0 !important;
+    right: auto !important;
+    top: 0 !important;
+  }
+
+  .hero-photo-exact .browser-content h2 {
+    margin: 52px 0 0 28px !important;
+    font-size: 28px !important;
+  }
+
+  .hero-photo-exact .browser-preview-card {
+    left: 24px !important;
+    right: 24px !important;
+    height: 155px !important;
+  }
+
+  .hero-photo-exact .hero-metrics {
+    width: calc(100% - 40px) !important;
+    min-height: 0 !important;
+    margin-top: 10px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .hero-photo-exact .hero-metrics div {
+    min-height: 92px !important;
+  }
+}
+
+/* Hero photo exact viewport correction */
+@media (min-width: 1181px) {
+  .hero-photo-exact {
+    min-height: 846px !important;
+    padding: 104px 0 20px !important;
+  }
+
+  .hero-photo-exact .hero-grid {
+    min-height: 610px !important;
+    grid-template-columns: minmax(600px, 0.39fr) minmax(800px, 0.61fr) !important;
+    gap: 34px !important;
+  }
+
+  .hero-photo-exact .hero-content {
+    max-width: 650px !important;
+    padding-top: 58px !important;
+  }
+
+  .hero-photo-exact .hero-eyebrow {
+    margin-bottom: 28px !important;
+  }
+
+  .hero-photo-exact h1 {
+    max-width: 650px !important;
+    font-size: clamp(52px, 3.15vw, 58px) !important;
+    line-height: 1.14 !important;
+    margin-bottom: 28px !important;
+  }
+
+  .hero-photo-exact .hero-content p {
+    max-width: 535px !important;
+    margin-bottom: 58px !important;
+    font-size: 22px !important;
+  }
+
+  .hero-photo-exact .hero-visual {
+    min-height: 610px !important;
+  }
+
+  .hero-photo-exact .hero-browser-composition {
+    height: 610px !important;
+  }
+
+  .hero-photo-exact .browser-panel-main {
+    width: 640px !important;
+    height: 548px !important;
+    right: 205px !important;
+    top: 26px !important;
+  }
+
+  .hero-photo-exact .browser-panel-left {
+    width: 292px !important;
+    height: 392px !important;
+    left: 16px !important;
+    top: 178px !important;
+  }
+
+  .hero-photo-exact .browser-panel-right {
+    width: 284px !important;
+    height: 430px !important;
+    top: 208px !important;
+  }
+
+  .hero-photo-exact .browser-content {
+    top: 112px !important;
+    bottom: 20px !important;
+  }
+
+  .hero-photo-exact .browser-content h2 {
+    margin-top: 70px !important;
+  }
+
+  .hero-photo-exact .browser-preview-card {
+    height: 190px !important;
+  }
+
+  .hero-photo-exact .hero-metrics {
+    width: min(1010px, calc(100% - 520px)) !important;
+    min-height: 118px !important;
+    margin-top: -4px !important;
+  }
+
+  .hero-photo-exact .hero-metrics div {
+    min-height: 80px !important;
+  }
+
+  .hero-photo-exact .hero-metrics strong {
+    font-size: 30px !important;
+  }
+}
