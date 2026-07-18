@@ -9034,3 +9034,353 @@ body {
     display: none !important;
   }
 }
+
+/* Cinematic final contact CTA */
+.contact-cinematic {
+  padding: clamp(80px, 8vw, 124px) 0 !important;
+  background:
+    radial-gradient(ellipse 44% 30% at 20% 15%, rgba(220, 166, 108, 0.08), transparent 66%),
+    radial-gradient(ellipse 38% 26% at 86% 28%, rgba(238, 202, 159, 0.06), transparent 70%),
+    linear-gradient(180deg, #050505 0%, #080807 100%) !important;
+}
+
+.contact-cinematic-card {
+  position: relative !important;
+  min-height: 660px !important;
+  display: grid !important;
+  grid-template-columns: minmax(420px, 1fr) minmax(420px, 0.86fr) !important;
+  align-items: center !important;
+  gap: clamp(48px, 6vw, 92px) !important;
+  overflow: hidden !important;
+  padding: clamp(58px, 6vw, 96px) !important;
+  border-radius: 54px !important;
+  border: 1px solid rgba(246, 229, 210, 0.16) !important;
+  background:
+    radial-gradient(circle at 13% 13%, rgba(244, 194, 133, 0.22), transparent 18%),
+    radial-gradient(circle at 97% 48%, rgba(242, 195, 139, 0.16), transparent 18%),
+    linear-gradient(110deg, rgba(86, 63, 44, 0.5), rgba(19, 17, 14, 0.92) 44%, rgba(12, 11, 10, 0.97)) !important;
+  box-shadow:
+    0 42px 120px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02) !important;
+}
+
+.contact-cinematic-card.reveal {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+.contact-cinematic-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 236, 207, 0.2) 0 1px, transparent 1.4px),
+    radial-gradient(circle at 70% 40%, rgba(255, 255, 255, 0.06) 0 1px, transparent 1.6px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px) !important;
+  background-size: 34px 34px, 52px 52px, 120px 120px, 120px 120px !important;
+  opacity: 0.2 !important;
+  mix-blend-mode: screen !important;
+}
+
+.contact-cinematic-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(ellipse 34% 42% at -1% 33%, rgba(0, 0, 0, 0.52), transparent 63%),
+    radial-gradient(ellipse 42% 52% at 50% 104%, rgba(0, 0, 0, 0.5), transparent 70%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.06), transparent 36%, rgba(0, 0, 0, 0.22)) !important;
+}
+
+.contact-cinematic-light {
+  position: absolute !important;
+  inset: -26% auto auto -10% !important;
+  width: 46% !important;
+  height: 52% !important;
+  pointer-events: none !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(255, 214, 160, 0.36), rgba(219, 150, 83, 0.12) 42%, transparent 68%) !important;
+  filter: blur(24px) !important;
+  opacity: 0.9 !important;
+}
+
+.contact-cinematic-shadows {
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  opacity: 0.42 !important;
+  background:
+    radial-gradient(ellipse at 7% 6%, rgba(0, 0, 0, 0.8) 0 8%, transparent 18%),
+    radial-gradient(ellipse at 2% 48%, rgba(0, 0, 0, 0.65) 0 8%, transparent 19%),
+    radial-gradient(ellipse at 94% 74%, rgba(0, 0, 0, 0.52) 0 9%, transparent 19%) !important;
+  filter: blur(12px) !important;
+}
+
+.contact-business-card,
+.contact-cinematic-content {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.contact-business-card {
+  width: min(620px, 100%) !important;
+  aspect-ratio: 1.62 / 1 !important;
+  margin: 36px 0 0 40px !important;
+  display: grid !important;
+  place-items: center !important;
+  transform: rotate(-26deg) skewX(-2deg) !important;
+  transform-origin: center !important;
+  border-radius: 2px !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(203, 188, 174, 0.88)),
+    radial-gradient(circle at 24% 18%, rgba(255, 255, 255, 0.62), transparent 30%) !important;
+  box-shadow:
+    0 58px 70px rgba(0, 0, 0, 0.48),
+    0 8px 0 rgba(94, 70, 52, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.88),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.08) !important;
+}
+
+.contact-business-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0, 0, 0, 0.1) 0 1px, transparent 1.2px),
+    radial-gradient(circle at 70% 40%, rgba(255, 255, 255, 0.45) 0 1px, transparent 1.5px) !important;
+  background-size: 13px 13px, 19px 19px !important;
+  opacity: 0.16 !important;
+  mix-blend-mode: multiply !important;
+}
+
+.contact-business-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: -18% -6% auto -4% !important;
+  height: 62% !important;
+  background:
+    linear-gradient(135deg, transparent 0 32%, rgba(0, 0, 0, 0.2) 33%, transparent 44%),
+    radial-gradient(ellipse at 22% 16%, rgba(0, 0, 0, 0.34), transparent 46%) !important;
+  filter: blur(8px) !important;
+  opacity: 0.38 !important;
+}
+
+.contact-paper-logo {
+  position: relative !important;
+  z-index: 2 !important;
+  display: grid !important;
+  justify-items: center !important;
+  gap: 20px !important;
+  transform: rotate(26deg) skewX(2deg) !important;
+  color: #050505 !important;
+  text-align: center !important;
+}
+
+.contact-paper-mark {
+  display: grid !important;
+  place-items: center !important;
+  width: 54px !important;
+  height: 54px !important;
+  font-size: 34px !important;
+  font-weight: 900 !important;
+  transform: skewX(-16deg) !important;
+}
+
+.contact-paper-logo strong {
+  font-size: clamp(36px, 3.1vw, 54px) !important;
+  line-height: 0.9 !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 900 !important;
+}
+
+.contact-paper-logo small {
+  color: rgba(0, 0, 0, 0.68) !important;
+  font-size: clamp(12px, 1vw, 16px) !important;
+  letter-spacing: 0.16em !important;
+  font-weight: 600 !important;
+}
+
+.contact-cinematic-content {
+  max-width: 620px !important;
+  justify-self: start !important;
+}
+
+.contact-cinematic-content h2 {
+  margin: 0 0 clamp(64px, 6vw, 86px) !important;
+  color: #f7f1eb !important;
+  font-size: clamp(44px, 3.45vw, 64px) !important;
+  line-height: 1.17 !important;
+  letter-spacing: -0.04em !important;
+  font-weight: 400 !important;
+  text-shadow: 0 16px 52px rgba(0, 0, 0, 0.48) !important;
+}
+
+.contact-cinematic-content h2 em {
+  position: relative !important;
+  display: inline-block !important;
+  color: #d7ad8b !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+}
+
+.contact-cinematic-content h2 em::after {
+  content: "" !important;
+  position: absolute !important;
+  left: -10% !important;
+  right: -13% !important;
+  bottom: -10px !important;
+  height: 30px !important;
+  border: 2px solid rgba(218, 174, 139, 0.9) !important;
+  border-top: 0 !important;
+  border-radius: 50% !important;
+  transform: rotate(-4deg) !important;
+}
+
+.contact-cinematic-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 22px !important;
+  flex-wrap: wrap !important;
+}
+
+.contact-cinematic-btn {
+  min-width: 250px !important;
+  min-height: 76px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 18px !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  font-size: clamp(22px, 1.7vw, 30px) !important;
+  line-height: 1 !important;
+  font-weight: 500 !important;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.65s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.65s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.contact-cinematic-btn svg {
+  width: 38px !important;
+  height: 38px !important;
+  flex: 0 0 auto !important;
+  fill: currentColor !important;
+}
+
+.contact-cinematic-btn:hover {
+  transform: translateY(-4px) !important;
+}
+
+.contact-cinematic-btn-telegram {
+  color: #f7f1eb !important;
+  border: 1px solid rgba(247, 241, 235, 0.58) !important;
+  background: rgba(255, 255, 255, 0.015) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+.contact-cinematic-btn-telegram:hover {
+  border-color: rgba(247, 241, 235, 0.9) !important;
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.09) !important;
+}
+
+.contact-cinematic-btn-whatsapp {
+  color: #0d0b09 !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  background: linear-gradient(180deg, #fff8f1 0%, #eee2d8 100%) !important;
+  box-shadow: 0 24px 62px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.84) !important;
+}
+
+.contact-cinematic-btn-whatsapp:hover {
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+@media (max-width: 1024px) {
+  .contact-cinematic-card {
+    min-height: auto !important;
+    grid-template-columns: 1fr !important;
+    gap: 44px !important;
+    padding: 42px !important;
+    border-radius: 38px !important;
+  }
+
+  .contact-business-card {
+    width: min(560px, 86vw) !important;
+    margin: 36px auto 0 !important;
+  }
+
+  .contact-cinematic-content {
+    max-width: 100% !important;
+    justify-self: stretch !important;
+    text-align: center !important;
+  }
+
+  .contact-cinematic-actions {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-cinematic {
+    padding: 56px 0 !important;
+  }
+
+  .contact-cinematic-card {
+    padding: 24px 18px 28px !important;
+    border-radius: 28px !important;
+    gap: 28px !important;
+  }
+
+  .contact-business-card {
+    width: 92% !important;
+    margin-top: 18px !important;
+    transform: rotate(-18deg) skewX(-1deg) !important;
+  }
+
+  .contact-paper-logo {
+    gap: 10px !important;
+    transform: rotate(18deg) skewX(1deg) !important;
+  }
+
+  .contact-paper-mark {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 22px !important;
+  }
+
+  .contact-paper-logo strong {
+    font-size: 26px !important;
+  }
+
+  .contact-paper-logo small {
+    max-width: 220px !important;
+    font-size: 8px !important;
+  }
+
+  .contact-cinematic-content h2 {
+    margin-bottom: 30px !important;
+    font-size: clamp(30px, 9vw, 42px) !important;
+  }
+
+  .contact-cinematic-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .contact-cinematic-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 62px !important;
+    font-size: 20px !important;
+  }
+
+  .contact-cinematic-btn svg {
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
