@@ -9570,3 +9570,37 @@ body {
     transform: translate3d(1.2%, 0.8%, 0) rotate(-3deg) scale(1.03);
   }
 }
+
+@media (max-width: 768px) {
+  .atmo-light-beams {
+    opacity: 0.15;
+    filter: blur(1px);
+  }
+
+  .atmo-leaf-shadows {
+    opacity: 0.14;
+    filter: blur(18px);
+  }
+
+  .contact-section > .atmo-light-beams,
+  .contact-section > .atmo-leaf-shadows {
+    opacity: 0.08;
+  }
+}
+
+@media (max-width: 420px) {
+  .atmo-light-beams {
+    opacity: 0.12;
+  }
+
+  .atmo-leaf-shadows {
+    opacity: 0.1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atmo-light-beams,
+  .atmo-leaf-shadows {
+    animation: none !important;
+  }
+}
