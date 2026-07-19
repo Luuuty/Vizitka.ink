@@ -8812,15 +8812,30 @@ body {
 
 @media (max-width: 640px) {
   .contact-cinematic {
-    padding: 28px 0 !important;
+    padding: 34px 0 !important;
+  }
+
+  .contact-cinematic > .container {
+    box-sizing: border-box !important;
+    width: min(calc(100vw - 44px), 430px) !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .contact-cinematic-card {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    align-content: end !important;
-    min-height: min(620px, calc(100svh - 72px)) !important;
-    padding: 300px 16px 22px !important;
+    grid-template-rows: auto !important;
+    align-content: start !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: clamp(245px, 66vw, 310px) 16px 22px !important;
     gap: 0 !important;
     border-radius: 24px !important;
     overflow: hidden !important;
@@ -8829,17 +8844,24 @@ body {
   .contact-cinematic-card::before {
     inset: 6px !important;
     border-radius: 20px !important;
-    background: url("img/contact-bg.png") 33% top / auto 47% no-repeat, linear-gradient(180deg, #11100f 0%, #080807 100%) !important;
+    background:
+      url("img/contact-bg.png") 32% top / auto clamp(255px, 68vw, 315px) no-repeat,
+      linear-gradient(180deg, #11100f 0%, #080807 100%) !important;
   }
 
   .contact-cinematic-card::after {
     inset: 6px !important;
     border-radius: 20px !important;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.12) 34%, rgba(0, 0, 0, 0.78) 58%, rgba(0, 0, 0, 0.86) 100%) !important;
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.06) 31%, rgba(0, 0, 0, 0.76) 49%, rgba(0, 0, 0, 0.88) 100%) !important;
   }
 
   .contact-business-card {
-    display: none !important;
+    display: block !important;
+    min-height: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
   }
 
   .contact-cinematic-content {
@@ -8847,31 +8869,57 @@ body {
     max-width: 100% !important;
     margin: 0 !important;
     justify-self: stretch !important;
-    text-align: left !important;
+    text-align: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    filter: none !important;
   }
 
   .contact-cinematic-content h2 {
-    margin-bottom: 18px !important;
-    font-size: clamp(28px, 8vw, 34px) !important;
-    line-height: 1.12 !important;
+    display: block !important;
+    max-width: 100% !important;
+    margin: 0 0 20px !important;
+    color: #f7f1eb !important;
+    font-size: clamp(26px, 7.6vw, 34px) !important;
+    line-height: 1.13 !important;
+    letter-spacing: -0.035em !important;
+    overflow-wrap: normal !important;
+  }
+
+  .contact-cinematic-content h2,
+  .contact-cinematic-content h2 em,
+  .contact-cinematic-actions {
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .contact-cinematic-actions {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 10px !important;
+    gap: 12px !important;
+    width: 100% !important;
+    justify-content: stretch !important;
   }
 
   .contact-cinematic-btn {
+    display: inline-flex !important;
+    box-sizing: border-box !important;
     width: 100% !important;
     min-width: 0 !important;
-    min-height: 54px !important;
+    min-height: 56px !important;
     font-size: 18px !important;
   }
 }
 
 @media (max-width: 390px) {
   .contact-cinematic-card {
-    padding-top: 282px !important;
+    padding-top: 246px !important;
+  }
+
+  .contact-cinematic-card::before {
+    background:
+      url("img/contact-bg.png") 32% top / auto 246px no-repeat,
+      linear-gradient(180deg, #11100f 0%, #080807 100%) !important;
   }
 }
