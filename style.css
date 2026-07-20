@@ -8828,14 +8828,15 @@ body {
   .contact-cinematic-card {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    grid-template-rows: auto !important;
-    align-content: start !important;
+    grid-template-rows: 1fr !important;
+    align-content: end !important;
+    align-items: end !important;
     box-sizing: border-box !important;
     width: 100% !important;
     max-width: 100% !important;
-    min-height: 0 !important;
+    min-height: clamp(560px, 86vw, 640px) !important;
     height: auto !important;
-    padding: clamp(246px, 52vw, 330px) clamp(18px, 4vw, 24px) 24px !important;
+    padding: clamp(240px, 44vw, 315px) clamp(18px, 4vw, 24px) 26px !important;
     gap: 0 !important;
     border-radius: 24px !important;
     overflow: hidden !important;
@@ -8844,16 +8845,15 @@ body {
   .contact-cinematic-card::before {
     inset: 6px !important;
     border-radius: 20px !important;
-    background:
-      url("img/contact-bg.png") 32% top / auto clamp(246px, 52vw, 330px) no-repeat,
-      linear-gradient(180deg, #11100f 0%, #080807 100%) !important;
+    background: url("img/contact-bg.png") 18% center / cover no-repeat !important;
   }
 
   .contact-cinematic-card::after {
     inset: 6px !important;
     border-radius: 20px !important;
     background:
-      linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.06) 31%, rgba(0, 0, 0, 0.76) 49%, rgba(0, 0, 0, 0.88) 100%) !important;
+      linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.08) 36%, rgba(0, 0, 0, 0.48) 66%, rgba(0, 0, 0, 0.76) 100%),
+      radial-gradient(ellipse 86% 48% at 50% 82%, rgba(0, 0, 0, 0.52), transparent 68%) !important;
   }
 
   .contact-business-card {
@@ -8868,7 +8868,7 @@ body {
     box-sizing: border-box !important;
     width: calc(100% - (clamp(18px, 4vw, 24px) * 2)) !important;
     max-width: 100% !important;
-    margin: 0 !important;
+    margin: auto 0 0 !important;
     justify-self: center !important;
     text-align: center !important;
     opacity: 1 !important;
@@ -8924,7 +8924,8 @@ body {
   }
 
   .contact-cinematic-card {
-    padding: clamp(246px, 66vw, 310px) 16px 22px !important;
+    min-height: clamp(560px, 148vw, 640px) !important;
+    padding: clamp(285px, 76vw, 335px) 16px 22px !important;
   }
 
   .contact-cinematic-content {
@@ -8932,9 +8933,13 @@ body {
   }
 
   .contact-cinematic-card::before {
+    background: url("img/contact-bg.png") 16% center / cover no-repeat !important;
+  }
+
+  .contact-cinematic-card::after {
     background:
-      url("img/contact-bg.png") 32% top / auto clamp(246px, 66vw, 310px) no-repeat,
-      linear-gradient(180deg, #11100f 0%, #080807 100%) !important;
+      linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.08) 33%, rgba(0, 0, 0, 0.5) 64%, rgba(0, 0, 0, 0.78) 100%),
+      radial-gradient(ellipse 88% 48% at 50% 82%, rgba(0, 0, 0, 0.54), transparent 68%) !important;
   }
 
   .contact-cinematic-content h2 {
@@ -8944,12 +8949,11 @@ body {
 
 @media (max-width: 390px) {
   .contact-cinematic-card {
-    padding-top: 246px !important;
+    min-height: 560px !important;
+    padding-top: 286px !important;
   }
 
   .contact-cinematic-card::before {
-    background:
-      url("img/contact-bg.png") 32% top / auto 246px no-repeat,
-      linear-gradient(180deg, #11100f 0%, #080807 100%) !important;
+    background: url("img/contact-bg.png") 16% center / cover no-repeat !important;
   }
 }
