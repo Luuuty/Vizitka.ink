@@ -12,17 +12,19 @@ const projectMessage = leadForm?.querySelector('textarea[name="comment"]');
 const contactLinks = document.querySelectorAll('.service-card a[href="#contact"], .price-card a[href="#contact"], .benefits-section a[href="#contact"], .portfolio-link[href="#contact"]');
 const siteHeader = document.querySelector(".site-header");
 const hero = document.querySelector(".hero");
+const finePointer = window.matchMedia("(pointer: fine)").matches;
 
 // Navbar scroll effect
 if (siteHeader) {
+  let scrollFrame = null;
+
   window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 50) {
-      siteHeader.classList.add("scrolled");
-    } else {
-      siteHeader.classList.remove("scrolled");
-    }
+    if (scrollFrame) return;
+
+    scrollFrame = requestAnimationFrame(() => {
+      siteHeader.classList.toggle("scrolled", window.pageYOffset > 50);
+      scrollFrame = null;
+    });
   }, { passive: true });
 }
 
@@ -40,28 +42,75 @@ navLinks.forEach((link) => {
   });
 });
 
-if (cursorOrb && window.matchMedia("(pointer: fine)").matches) {
+if (cursorOrb && finePointer) {
+  let cursorFrame = null;
+  let cursorX = 0;
+  let cursorY = 0;
+
   window.addEventListener("pointermove", (event) => {
-    cursorOrb.style.transform = `translate(${event.clientX - 110}px, ${event.clientY - 110}px)`;
-  });
+    cursorX = event.clientX;
+    cursorY = event.clientY;
+
+    if (cursorFrame) return;
+
+    cursorFrame = requestAnimationFrame(() => {
+      cursorOrb.style.transform = `translate3d(${cursorX - 110}px, ${cursorY - 110}px, 0)`;
+      cursorFrame = null;
+    });
+  }, { passive: true });
 } else if (cursorOrb) {
   cursorOrb.remove();
 }
 
-if (hero && window.matchMedia("(pointer: fine)").matches) {
-  hero.addEventListener("pointermove", (event) => {
-    const rect = hero.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
+if (hero && finePointer) {
+  let heroFrame = null;
+  let heroPointerX = 0;
+  let heroPointerY = 0;
 
-    hero.style.setProperty("--hero-parallax-x", `${x * 18}px`);
-    hero.style.setProperty("--hero-parallax-y", `${y * 14}px`);
-  });
+  hero.addEventListener("pointermove", (event) => {
+    heroPointerX = event.clientX;
+    heroPointerY = event.clientY;
+
+    if (heroFrame) return;
+
+    heroFrame = requestAnimationFrame(() => {
+      const rect = hero.getBoundingClientRect();
+      const x = (heroPointerX - rect.left) / rect.width - 0.5;
+      const y = (heroPointerY - rect.top) / rect.height - 0.5;
+
+      hero.style.setProperty("--hero-parallax-x", `${x * 18}px`);
+      hero.style.setProperty("--hero-parallax-y", `${y * 14}px`);
+      heroFrame = null;
+    });
+  }, { passive: true });
 
   hero.addEventListener("pointerleave", () => {
+    if (heroFrame) {
+      cancelAnimationFrame(heroFrame);
+      heroFrame = null;
+    }
+
     hero.style.setProperty("--hero-parallax-x", "0px");
     hero.style.setProperty("--hero-parallax-y", "0px");
   });
+}
+
+const motionContainers = document.querySelectorAll(".hero, section, .footer, .tech-strip, .marquee");
+
+if ("IntersectionObserver" in window && motionContainers.length) {
+  const motionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("motion-paused", !entry.isIntersecting);
+      });
+    },
+    {
+      rootMargin: "180px 0px",
+      threshold: 0,
+    }
+  );
+
+  motionContainers.forEach((container) => motionObserver.observe(container));
 }
 
 const revealObserver = new IntersectionObserver(

@@ -254,7 +254,7 @@ body {
     radial-gradient(circle at 18% 0%, rgba(0, 216, 255, 0.08), transparent 28%),
     radial-gradient(circle at 82% 14%, rgba(138, 92, 255, 0.06), transparent 30%),
     linear-gradient(180deg, #02040a 0%, #03060f 42%, #02040a 100%);
-  background-attachment: fixed;
+  background-attachment: scroll;
   color: var(--text);
   overflow-x: hidden;
   text-rendering: geometricPrecision;
@@ -10147,5 +10147,82 @@ body {
 
   .hero-reference.hero-photo-exact .hero-grid {
     min-height: calc(700px - 156px) !important;
+  }
+}
+
+/* Scroll performance overrides */
+.motion-paused,
+.motion-paused * {
+  animation-play-state: paused !important;
+}
+
+.atmo-light-beams,
+.atmo-leaf-shadows,
+.hero-torus,
+.hero-glass,
+.glass-cube,
+.browser-panel,
+.browser-main,
+.project-preview,
+.portfolio-card::before,
+.why-card::before {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.atmo-light-beams,
+.atmo-leaf-shadows {
+  animation: none !important;
+}
+
+.contact-section > .atmo-light-beams {
+  animation: beamDrift 18s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate !important;
+}
+
+.contact-section > .atmo-leaf-shadows {
+  animation: leafSway 22s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate !important;
+}
+
+.card,
+.badge,
+.hero-glass,
+.glass-cube span,
+.project-preview,
+.portfolio-card,
+.why-card,
+.hero .btn-outline,
+.hero-eyebrow,
+.hero-price-badge,
+.browser-panel,
+.browser-main,
+.browser-service-card,
+.hero-metrics,
+.lead-form,
+.contact-card {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.portfolio-section::before,
+.why-section::before,
+.benefits-section::before,
+.pricing-section::before,
+.faq-section::before {
+  animation: none !important;
+}
+
+@media (max-width: 768px) {
+  .atmo-light-beams::before,
+  .atmo-leaf-shadows,
+  .portfolio-section::before,
+  .why-section::before {
+    filter: none !important;
+  }
+
+  .hero-torus,
+  .hero-glass,
+  .glass-cube,
+  .cursor-orb {
+    display: none !important;
   }
 }
