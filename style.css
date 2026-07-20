@@ -8810,14 +8810,14 @@ body {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .contact-cinematic {
-    padding: 34px 0 !important;
+    padding: 36px 0 !important;
   }
 
   .contact-cinematic > .container {
     box-sizing: border-box !important;
-    width: min(calc(100vw - 44px), 430px) !important;
+    width: min(calc(100vw - 44px), 560px) !important;
     max-width: none !important;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -8835,7 +8835,7 @@ body {
     max-width: 100% !important;
     min-height: 0 !important;
     height: auto !important;
-    padding: clamp(245px, 66vw, 310px) 16px 22px !important;
+    padding: clamp(246px, 52vw, 330px) clamp(18px, 4vw, 24px) 24px !important;
     gap: 0 !important;
     border-radius: 24px !important;
     overflow: hidden !important;
@@ -8845,7 +8845,7 @@ body {
     inset: 6px !important;
     border-radius: 20px !important;
     background:
-      url("img/contact-bg.png") 32% top / auto clamp(255px, 68vw, 315px) no-repeat,
+      url("img/contact-bg.png") 32% top / auto clamp(246px, 52vw, 330px) no-repeat,
       linear-gradient(180deg, #11100f 0%, #080807 100%) !important;
   }
 
@@ -8865,15 +8865,17 @@ body {
   }
 
   .contact-cinematic-content {
-    width: 100% !important;
+    box-sizing: border-box !important;
+    width: calc(100% - (clamp(18px, 4vw, 24px) * 2)) !important;
     max-width: 100% !important;
     margin: 0 !important;
-    justify-self: stretch !important;
+    justify-self: center !important;
     text-align: center !important;
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
     filter: none !important;
+    position: relative !important;
   }
 
   .contact-cinematic-content h2 {
@@ -8881,7 +8883,7 @@ body {
     max-width: 100% !important;
     margin: 0 0 20px !important;
     color: #f7f1eb !important;
-    font-size: clamp(26px, 7.6vw, 34px) !important;
+    font-size: clamp(24px, 5.8vw, 34px) !important;
     line-height: 1.13 !important;
     letter-spacing: -0.035em !important;
     overflow-wrap: normal !important;
@@ -8909,6 +8911,34 @@ body {
     min-width: 0 !important;
     min-height: 56px !important;
     font-size: 18px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-cinematic {
+    padding: 34px 0 !important;
+  }
+
+  .contact-cinematic > .container {
+    width: min(calc(100vw - 44px), 430px) !important;
+  }
+
+  .contact-cinematic-card {
+    padding: clamp(246px, 66vw, 310px) 16px 22px !important;
+  }
+
+  .contact-cinematic-content {
+    width: calc(100% - 32px) !important;
+  }
+
+  .contact-cinematic-card::before {
+    background:
+      url("img/contact-bg.png") 32% top / auto clamp(246px, 66vw, 310px) no-repeat,
+      linear-gradient(180deg, #11100f 0%, #080807 100%) !important;
+  }
+
+  .contact-cinematic-content h2 {
+    font-size: clamp(24px, 7.2vw, 32px) !important;
   }
 }
 
