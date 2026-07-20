@@ -10471,3 +10471,68 @@ body {
     margin-top: 34px !important;
   }
 }
+
+/* Footer warm photo background */
+.footer {
+  min-height: 390px !important;
+  padding: clamp(78px, 7vw, 118px) 0 !important;
+  background:
+    linear-gradient(90deg, rgba(5, 5, 5, 0.78) 0%, rgba(5, 5, 5, 0.48) 42%, rgba(5, 5, 5, 0.62) 100%),
+    linear-gradient(180deg, rgba(5, 5, 5, 0.38) 0%, rgba(5, 5, 5, 0.12) 48%, rgba(5, 5, 5, 0.72) 100%),
+    url("img/footer-warm-wall.png") center center / cover no-repeat !important;
+  border-top: 1px solid rgba(247, 241, 235, 0.08) !important;
+}
+
+.footer::before,
+.footer::after,
+.footer .atmo-light-beams,
+.footer .atmo-leaf-shadows,
+.footer-noise {
+  display: none !important;
+}
+
+.footer-border-glow {
+  opacity: 0.75 !important;
+  z-index: 1 !important;
+}
+
+.footer-grid {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.footer .logo,
+.footer h3 {
+  color: #f7f1eb !important;
+  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.36) !important;
+}
+
+.footer p,
+.footer a:not(.logo) {
+  color: rgba(247, 241, 235, 0.76) !important;
+  text-shadow: 0 10px 26px rgba(0, 0, 0, 0.34) !important;
+}
+
+.footer a:not(.logo):hover {
+  color: #f7f1eb !important;
+}
+
+.footer .socials a {
+  background: rgba(7, 7, 8, 0.26) !important;
+  border-color: rgba(247, 241, 235, 0.16) !important;
+}
+
+.footer .socials a:hover {
+  background: rgba(247, 241, 235, 0.1) !important;
+  border-color: rgba(247, 241, 235, 0.34) !important;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    min-height: 520px !important;
+    padding: 64px 0 72px !important;
+    background:
+      linear-gradient(180deg, rgba(5, 5, 5, 0.74) 0%, rgba(5, 5, 5, 0.48) 45%, rgba(5, 5, 5, 0.82) 100%),
+      url("img/footer-warm-wall.png") 42% center / cover no-repeat !important;
+  }
+}
