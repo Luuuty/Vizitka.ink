@@ -10149,3 +10149,225 @@ body {
     min-height: calc(700px - 156px) !important;
   }
 }
+
+/* Hero photo text overlay */
+.hero-reference.hero-photo-exact .hero-content {
+  display: block !important;
+  width: min(760px, 100%) !important;
+  max-width: 760px !important;
+  margin: clamp(64px, 8vh, 104px) 0 0 clamp(44px, 8vw, 118px) !important;
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 3 !important;
+  text-align: left !important;
+}
+
+.hero-reference.hero-photo-exact h1 {
+  position: relative !important;
+  max-width: 760px !important;
+  margin: 0 !important;
+  color: #f7f1eb !important;
+  font-size: clamp(50px, 4.45vw, 72px) !important;
+  line-height: 0.98 !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.085em !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 12px 34px rgba(0, 0, 0, 0.34) !important;
+}
+
+.hero-reference.hero-photo-exact h1::after {
+  content: "" !important;
+  position: absolute !important;
+  right: -12px !important;
+  bottom: -10px !important;
+  width: 270px !important;
+  height: 58px !important;
+  border: 2px solid rgba(247, 241, 235, 0.86) !important;
+  border-radius: 50% !important;
+  transform: rotate(-8deg) !important;
+  pointer-events: none !important;
+}
+
+.hero-reference.hero-photo-exact .hero-content p {
+  max-width: 560px !important;
+  margin: 34px 0 0 !important;
+  color: rgba(247, 241, 235, 0.68) !important;
+  font-size: clamp(20px, 1.45vw, 26px) !important;
+  line-height: 1.45 !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em !important;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.35) !important;
+}
+
+.hero-signature-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-top: clamp(76px, 12vh, 128px) !important;
+  margin-left: clamp(145px, 18vw, 260px) !important;
+  color: #f7f1eb !important;
+  font-size: clamp(20px, 1.5vw, 26px) !important;
+  line-height: 1 !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  text-shadow: 0 12px 32px rgba(0, 0, 0, 0.38) !important;
+  transition: opacity 0.25s ease, transform 0.25s ease !important;
+}
+
+.hero-signature-link:hover {
+  opacity: 0.82 !important;
+  transform: translate3d(2px, -2px, 0) !important;
+}
+
+.hero-signature-link span {
+  font-size: 1.18em !important;
+  font-weight: 400 !important;
+}
+
+@media (max-width: 768px) {
+  .hero-reference.hero-photo-exact .hero-content {
+    width: min(100%, 560px) !important;
+    max-width: 560px !important;
+    margin: 84px auto 0 !important;
+    text-align: center !important;
+  }
+
+  .hero-reference.hero-photo-exact h1 {
+    font-size: clamp(36px, 8.8vw, 52px) !important;
+    line-height: 1.02 !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  .hero-reference.hero-photo-exact h1::after {
+    right: 0 !important;
+    bottom: -8px !important;
+    width: min(240px, 58vw) !important;
+    height: 48px !important;
+    border-width: 1.5px !important;
+  }
+
+  .hero-reference.hero-photo-exact .hero-content p {
+    margin: 28px auto 0 !important;
+    font-size: clamp(17px, 4.6vw, 22px) !important;
+  }
+
+  .hero-signature-link {
+    margin: 72px auto 0 !important;
+    font-size: clamp(18px, 5vw, 22px) !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-reference.hero-photo-exact .hero-content {
+    margin-top: 96px !important;
+  }
+
+  .hero-reference.hero-photo-exact h1 {
+    font-size: clamp(30px, 8.5vw, 38px) !important;
+    letter-spacing: 0.055em !important;
+  }
+
+  .hero-reference.hero-photo-exact h1::after {
+    right: -4px !important;
+    bottom: -7px !important;
+    width: min(208px, 62vw) !important;
+    height: 40px !important;
+  }
+
+  .hero-signature-link {
+    margin-top: 58px !important;
+  }
+}
+
+/* Hero text final placement */
+.hero-reference.hero-photo-exact {
+  padding-top: 126px !important;
+}
+
+.hero-reference.hero-photo-exact .hero-grid {
+  align-items: start !important;
+}
+
+.hero-reference.hero-photo-exact .hero-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  transform: none !important;
+  width: min(920px, 100%) !important;
+  max-width: 920px !important;
+  margin: 34px 0 0 clamp(72px, 10vw, 150px) !important;
+}
+
+.hero-reference.hero-photo-exact h1 {
+  max-width: 920px !important;
+  color: rgba(255, 252, 248, 0.95) !important;
+  font-size: clamp(46px, 3.85vw, 62px) !important;
+  line-height: 1.04 !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.075em !important;
+  opacity: 1 !important;
+}
+
+.hero-reference.hero-photo-exact h1::after {
+  right: 4px !important;
+  bottom: -12px !important;
+  width: 305px !important;
+  height: 62px !important;
+  opacity: 0.95 !important;
+}
+
+.hero-reference.hero-photo-exact .hero-content p {
+  color: rgba(255, 252, 248, 0.66) !important;
+  opacity: 1 !important;
+}
+
+.hero-reference.hero-photo-exact .hero-signature-link {
+  opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+  .hero-reference.hero-photo-exact {
+    padding-top: 96px !important;
+  }
+
+  .hero-reference.hero-photo-exact .hero-grid {
+    align-items: start !important;
+  }
+
+  .hero-reference.hero-photo-exact .hero-content {
+    margin: 72px auto 0 !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-reference.hero-photo-exact .hero-content {
+    margin-top: 82px !important;
+  }
+}
+
+/* Hero text mobile readability tune */
+@media (max-width: 430px) {
+  .hero-reference.hero-photo-exact h1 {
+    font-size: clamp(27px, 7.2vw, 32px) !important;
+    line-height: 1.14 !important;
+    letter-spacing: 0.045em !important;
+  }
+
+  .hero-reference.hero-photo-exact h1::after {
+    width: min(196px, 55vw) !important;
+    height: 38px !important;
+    right: 20px !important;
+    bottom: -3px !important;
+  }
+
+  .hero-reference.hero-photo-exact .hero-content p {
+    margin-top: 26px !important;
+    font-size: 16px !important;
+  }
+
+  .hero-signature-link {
+    margin-top: 54px !important;
+  }
+}
